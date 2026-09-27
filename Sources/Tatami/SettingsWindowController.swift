@@ -107,6 +107,22 @@ struct GeneralSettingsView: View {
                 Text(L("general.autoUpdate"))
                 Text(L("general.autoUpdate.subtitle"))
             }
+
+            Section {
+                HStack {
+                    Button(L("general.export")) {
+                        SettingsTransfer.exportSettings(from: settings)
+                    }
+                    Button(L("general.import")) {
+                        SettingsTransfer.importSettings(into: settings)
+                    }
+                }
+            } header: {
+                Text(L("general.backup.header"))
+            } footer: {
+                Text(L("general.backup.footer"))
+                    .foregroundStyle(.secondary)
+            }
         }
         .formStyle(.grouped)
         .frame(width: settingsWidth)

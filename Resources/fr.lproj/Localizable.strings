@@ -52,3 +52,20 @@
 "general.autoUpdate.subtitle" = "Vérifie sur GitHub si une nouvelle version existe à chaque démarrage de Tatami";
 "help.updates.title" = "Mises à jour";
 "help.updates.body" = "Choisissez « Rechercher des mises à jour… » dans l’icône de la barre des menus, ou activez la recherche automatique dans Réglages → Général. Lorsqu’une nouvelle version est trouvée, cliquez sur Installer la mise à jour : Tatami la télécharge, l’installe et redémarre. Votre autorisation d’accessibilité est conservée.";
+
+"general.backup.header" = "Sauvegarde";
+"general.export" = "Exporter les réglages…";
+"general.import" = "Importer des réglages…";
+"general.backup.footer" = "Enregistre vos réglages de langue, de grille, de disposition par glissement et de raccourcis dans un fichier. « Ouvrir à la connexion » n’est pas inclus.";
+"backup.defaultFileName" = "Réglages Tatami";
+"backup.import.confirm.title" = "Importer les réglages ?";
+"backup.import.confirm.message" = "Vos réglages actuels seront remplacés par ceux de « %@ ».";
+"backup.import.confirm.button" = "Importer";
+"backup.cancel" = "Annuler";
+"backup.import.success" = "Réglages importés";
+"backup.error.title" = "Impossible d’importer les réglages";
+"backup.error.message" = "« %@ » n’est pas un fichier de réglages Tatami, ou il est endommagé.";
+"backup.exportError.title" = "Impossible d’exporter les réglages";
+"backup.ok" = "OK";
+"help.backup.title" = "Sauvegarder les réglages";
+"help.backup.body" = "Dans Réglages → Général, choisissez Exporter les réglages… pour enregistrer vos réglages de grille, de disposition, de raccourcis et de langue dans un fichier. Utilisez Importer des réglages… sur un autre Mac, ou après une réinstallation, pour les restaurer.";

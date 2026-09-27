@@ -52,3 +52,20 @@
 "general.autoUpdate.subtitle" = "每次啟動 Tatami 時，到 GitHub 檢查是否有新版本";
 "help.updates.title" = "更新";
 "help.updates.body" = "從選單列圖示選「檢查更新…」，或在「設定 → 一般」開啟自動檢查。找到新版本時按「安裝更新」，Tatami 會自動下載、安裝並重新啟動，輔助使用權限也會保留。";
+
+"general.backup.header" = "備份";
+"general.export" = "匯出設定…";
+"general.import" = "匯入設定…";
+"general.backup.footer" = "把語言、格線、Snap 和快捷鍵設定存成檔案。不包含「登入時啟動」。";
+"backup.defaultFileName" = "Tatami 設定";
+"backup.import.confirm.title" = "要匯入設定嗎？";
+"backup.import.confirm.message" = "目前的設定會被「%@」裡的設定取代。";
+"backup.import.confirm.button" = "匯入";
+"backup.cancel" = "取消";
+"backup.import.success" = "已匯入設定";
+"backup.error.title" = "無法匯入設定";
+"backup.error.message" = "「%@」不是 Tatami 的設定檔，或檔案已損毀。";
+"backup.exportError.title" = "無法匯出設定";
+"backup.ok" = "好";
+"help.backup.title" = "備份設定";
+"help.backup.body" = "在「設定 → 一般」選「匯出設定…」，把格線、Snap、快捷鍵和語言設定存成檔案。在另一台 Mac 或重新安裝後，用「匯入設定…」就能還原。";

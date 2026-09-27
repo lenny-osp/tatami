@@ -127,6 +127,36 @@ final class AppSettings: ObservableObject {
         UserDefaults.standard.set(isSnapEnabled, forKey: Self.snapEnabledKey)
     }
 
+    // MARK: - 匯出／匯入
+
+    func makeBackup() -> SettingsBackup {
+        SettingsBackup(
+            language: language.rawValue,
+            isSnapEnabled: isSnapEnabled,
+            isAutoUpdateEnabled: isAutoUpdateEnabled,
+            gridColumns: gridColumns,
+            gridRows: gridRows,
+            showGridKeyCombo: showGridKeyCombo,
+            nextScreenKeyCombo: nextScreenKeyCombo,
+            shortcuts: shortcuts
+        )
+    }
+
+    /// 套用匯入的設定。檔案裡沒有的欄位保留目前的值；格線大小會限制在允許範圍內。
+    func apply(_ backup: SettingsBackup) {
+        if let code = backup.language, let language = AppLanguage(rawValue: code) {
+            self.language = language
+        }
+        if let enabled = backup.isSnapEnabled { setSnapEnabled(enabled) }
+        if let enabled = backup.isAutoUpdateEnabled { isAutoUpdateEnabled = enabled }
+        if let columns = backup.gridColumns { gridColumns = Self.clamp(columns) }
+        if let rows = backup.gridRows { gridRows = Self.clamp(rows) }
+        // 快捷鍵沒設定時匯出檔裡不會有這個欄位，所以直接套用（nil 代表清除）
+        showGridKeyCombo = backup.showGridKeyCombo
+        nextScreenKeyCombo = backup.nextScreenKeyCombo
+        if let shortcuts = backup.shortcuts { self.shortcuts = shortcuts }
+    }
+
     func addShortcut() {
         shortcuts.append(.new(name: L("shortcut.defaultName"), grid: grid))
     }

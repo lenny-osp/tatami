@@ -52,3 +52,20 @@
 "general.autoUpdate.subtitle" = "Comprueba en GitHub si hay una versión nueva cada vez que se inicia Tatami";
 "help.updates.title" = "Actualizaciones";
 "help.updates.body" = "Elige «Buscar actualizaciones…» en el icono de la barra de menús o activa la búsqueda automática en Ajustes → General. Cuando haya una versión nueva, haz clic en Instalar actualización: Tatami la descarga, la instala y se reinicia. Tu permiso de accesibilidad se conserva.";
+
+"general.backup.header" = "Copia de seguridad";
+"general.export" = "Exportar ajustes…";
+"general.import" = "Importar ajustes…";
+"general.backup.footer" = "Guarda en un archivo tus ajustes de idioma, cuadrícula, organización al arrastrar y atajos. «Abrir al iniciar sesión» no se incluye.";
+"backup.defaultFileName" = "Ajustes de Tatami";
+"backup.import.confirm.title" = "¿Importar ajustes?";
+"backup.import.confirm.message" = "Tus ajustes actuales se sustituirán por los de «%@».";
+"backup.import.confirm.button" = "Importar";
+"backup.cancel" = "Cancelar";
+"backup.import.success" = "Ajustes importados";
+"backup.error.title" = "No se pudieron importar los ajustes";
+"backup.error.message" = "«%@» no es un archivo de ajustes de Tatami o está dañado.";
+"backup.exportError.title" = "No se pudieron exportar los ajustes";
+"backup.ok" = "Aceptar";
+"help.backup.title" = "Copia de seguridad de ajustes";
+"help.backup.body" = "En Ajustes → General, elige Exportar ajustes… para guardar en un archivo tus ajustes de cuadrícula, organización, atajos e idioma. Usa Importar ajustes… en otro Mac, o tras reinstalar, para restaurarlos.";

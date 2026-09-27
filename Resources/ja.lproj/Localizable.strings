@@ -52,3 +52,20 @@
 "general.autoUpdate.subtitle" = "Tatami を起動するたびに GitHub で新しいバージョンを確認します";
 "help.updates.title" = "アップデート";
 "help.updates.body" = "メニューバーのアイコンから「アップデートを確認…」を選ぶか、「設定 → 一般」で自動確認をオンにします。新しいバージョンが見つかったら「アップデートをインストール」をクリックすると、Tatami がダウンロード・インストールして再起動します。アクセシビリティ権限はそのまま保たれます。";
+
+"general.backup.header" = "バックアップ";
+"general.export" = "設定を書き出す…";
+"general.import" = "設定を読み込む…";
+"general.backup.footer" = "言語、グリッド、端への配置、ショートカットの設定をファイルに保存します。「ログイン時に起動」は含まれません。";
+"backup.defaultFileName" = "Tatami の設定";
+"backup.import.confirm.title" = "設定を読み込みますか？";
+"backup.import.confirm.message" = "現在の設定は「%@」の設定に置き換えられます。";
+"backup.import.confirm.button" = "読み込む";
+"backup.cancel" = "キャンセル";
+"backup.import.success" = "設定を読み込みました";
+"backup.error.title" = "設定を読み込めませんでした";
+"backup.error.message" = "「%@」は Tatami の設定ファイルではないか、破損しています。";
+"backup.exportError.title" = "設定を書き出せませんでした";
+"backup.ok" = "OK";
+"help.backup.title" = "設定のバックアップ";
+"help.backup.body" = "「設定 → 一般」で「設定を書き出す…」を選ぶと、グリッド、配置、ショートカット、言語の設定をファイルに保存できます。別の Mac や再インストール後に「設定を読み込む…」で復元できます。";

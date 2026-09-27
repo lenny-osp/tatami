@@ -52,3 +52,20 @@
 "general.autoUpdate.subtitle" = "Checks GitHub for a new version each time Tatami starts";
 "help.updates.title" = "Updates";
 "help.updates.body" = "Choose “Check for Updates…” from the menu bar icon, or turn on automatic checks in Settings → General. When a new version is found, click Install Update and Tatami downloads, installs, and relaunches itself. Your Accessibility permission is kept.";
+
+"general.backup.header" = "Backup";
+"general.export" = "Export Settings…";
+"general.import" = "Import Settings…";
+"general.backup.footer" = "Saves your language, grid, snap, and shortcut settings to a file. Launch at Login is not included.";
+"backup.defaultFileName" = "Tatami Settings";
+"backup.import.confirm.title" = "Import settings?";
+"backup.import.confirm.message" = "Your current settings will be replaced with the ones in “%@”.";
+"backup.import.confirm.button" = "Import";
+"backup.cancel" = "Cancel";
+"backup.import.success" = "Settings imported";
+"backup.error.title" = "Couldn’t import settings";
+"backup.error.message" = "“%@” isn’t a Tatami settings file, or it’s damaged.";
+"backup.exportError.title" = "Couldn’t export settings";
+"backup.ok" = "OK";
+"help.backup.title" = "Back Up Settings";
+"help.backup.body" = "In Settings → General, choose Export Settings… to save your grid, snap, shortcut, and language settings to a file. Use Import Settings… on another Mac, or after reinstalling, to restore them.";

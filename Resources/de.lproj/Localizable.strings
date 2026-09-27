@@ -52,3 +52,20 @@
 "general.autoUpdate.subtitle" = "Prüft bei jedem Start von Tatami auf GitHub, ob es eine neue Version gibt";
 "help.updates.title" = "Updates";
 "help.updates.body" = "Wähle „Nach Updates suchen …“ im Menüleistensymbol oder aktiviere die automatische Suche unter Einstellungen → Allgemein. Wird eine neue Version gefunden, klicke auf „Update installieren“ – Tatami lädt sie, installiert sie und startet neu. Die Bedienungshilfen-Berechtigung bleibt erhalten.";
+
+"general.backup.header" = "Sicherung";
+"general.export" = "Einstellungen exportieren …";
+"general.import" = "Einstellungen importieren …";
+"general.backup.footer" = "Speichert Sprache, Raster, Randanordnung und Kurzbefehle in einer Datei. „Bei der Anmeldung öffnen“ ist nicht enthalten.";
+"backup.defaultFileName" = "Tatami-Einstellungen";
+"backup.import.confirm.title" = "Einstellungen importieren?";
+"backup.import.confirm.message" = "Deine aktuellen Einstellungen werden durch die aus „%@“ ersetzt.";
+"backup.import.confirm.button" = "Importieren";
+"backup.cancel" = "Abbrechen";
+"backup.import.success" = "Einstellungen importiert";
+"backup.error.title" = "Einstellungen konnten nicht importiert werden";
+"backup.error.message" = "„%@“ ist keine Tatami-Einstellungsdatei oder beschädigt.";
+"backup.exportError.title" = "Einstellungen konnten nicht exportiert werden";
+"backup.ok" = "OK";
+"help.backup.title" = "Einstellungen sichern";
+"help.backup.body" = "Wähle unter Einstellungen → Allgemein „Einstellungen exportieren …“, um Raster, Randanordnung, Kurzbefehle und Sprache in einer Datei zu speichern. Mit „Einstellungen importieren …“ stellst du sie auf einem anderen Mac oder nach einer Neuinstallation wieder her.";

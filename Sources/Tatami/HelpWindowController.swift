@@ -43,6 +43,7 @@ struct HelpView: View {
         ("display.2", "help.screens.title", "help.screens.body"),
         ("lock.shield", "help.permission.title", "help.permission.body"),
         ("arrow.down.circle", "help.updates.title", "help.updates.body"),
+        ("square.and.arrow.up", "help.backup.title", "help.backup.body"),
     ]
 
     var body: some View {

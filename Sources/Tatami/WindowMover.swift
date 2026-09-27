@@ -87,8 +87,13 @@ enum WindowMover {
         guard screens.count > 1, let index = screens.firstIndex(of: current) else { return false }
         let next = screens[(index + 1) % screens.count]
 
-        let from = current.visibleFrame
-        let to = next.visibleFrame
+        let target = relativeFrame(frame, from: current.visibleFrame, to: next.visibleFrame)
+        setFrame(target, of: window)
+        return true
+    }
+
+    /// 把 frame 從 from 區域等比例換算到 to 區域，並確保整個視窗都在 to 裡面。
+    nonisolated static func relativeFrame(_ frame: CGRect, from: CGRect, to: CGRect) -> CGRect {
         let scaleX = to.width / from.width
         let scaleY = to.height / from.height
         var target = CGRect(
@@ -97,12 +102,9 @@ enum WindowMover {
             width: min(frame.width * scaleX, to.width),
             height: min(frame.height * scaleY, to.height)
         )
-        // 確保整個視窗都在新螢幕的可用範圍內
         target.origin.x = min(max(target.minX, to.minX), to.maxX - target.width)
         target.origin.y = min(max(target.minY, to.minY), to.maxY - target.height)
-
-        setFrame(target.integral, of: window)
-        return true
+        return target.integral
     }
 
     // MARK: - 私有工具

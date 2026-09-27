@@ -23,11 +23,11 @@ struct Grid: Codable, Equatable {
         let maxY = area.maxY - CGFloat(selection.row) * cellHeight
         let minY = area.maxY - CGFloat(selection.row + selection.rows) * cellHeight
 
-        return CGRect(
-            x: minX.rounded(),
-            y: minY.rounded(),
-            width: (maxX - minX).rounded(),
-            height: (maxY - minY).rounded()
-        )
+        // 先把四條邊各自取整數再算寬高，相鄰兩格的邊界才會完全接上，不會有 1 點的縫
+        let left = minX.rounded()
+        let right = maxX.rounded()
+        let bottom = minY.rounded()
+        let top = maxY.rounded()
+        return CGRect(x: left, y: bottom, width: right - left, height: top - bottom)
     }
 }

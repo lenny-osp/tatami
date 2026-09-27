@@ -98,7 +98,7 @@ If you turned on **Launch at Login**, turn it off in Tatami before deleting the 
 
 ## Contributing
 
-Issues and pull requests are welcome. Please read [AGENTS.md](AGENTS.md) for the project layout, conventions, localization rules, and release process. Every user-visible string must be translated into all supported languages. Check the translations with `./scripts/check-localizations.sh`.
+Issues and pull requests are welcome. Please read [AGENTS.md](AGENTS.md) for the project layout, conventions, localization rules, and release process. Every user-visible string must be translated into all supported languages. Before opening a pull request, run `swift test` and `./scripts/check-localizations.sh`. CI runs both, plus a full app build, on every pull request.
 
 ## Support
 

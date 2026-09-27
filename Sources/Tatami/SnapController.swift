@@ -1,7 +1,7 @@
 import AppKit
 
 /// 拖曳視窗到螢幕邊緣時要排列成的樣子。
-private enum SnapZone {
+enum SnapZone {
     case maximize, leftHalf, rightHalf
 
     var selection: GridSelection {
@@ -24,7 +24,7 @@ private enum SnapZone {
 final class SnapController {
     private let grid = Grid()
     /// 游標離螢幕邊緣多近才觸發（點）
-    private let edgeMargin: CGFloat = 5
+    nonisolated static let edgeMargin: CGFloat = 5
     private let preview = SnapPreviewWindow()
 
     private var monitor: Any?
@@ -85,7 +85,7 @@ final class SnapController {
 
     private func updatePreview(at point: CGPoint) {
         guard let screen = NSScreen.screens.first(where: { NSMouseInRect(point, $0.frame, false) }),
-              let zone = zone(at: point, in: screen.frame)
+              let zone = Self.zone(at: point, in: screen.frame)
         else {
             pendingFrame = nil
             preview.hide()
@@ -101,7 +101,7 @@ final class SnapController {
     }
 
     /// 左右邊緣優先於頂端，這樣在左上、右上角也能排成半邊。
-    private func zone(at point: CGPoint, in frame: CGRect) -> SnapZone? {
+    nonisolated static func zone(at point: CGPoint, in frame: CGRect, edgeMargin: CGFloat = edgeMargin) -> SnapZone? {
         if point.x <= frame.minX + edgeMargin { return .leftHalf }
         if point.x >= frame.maxX - edgeMargin { return .rightHalf }
         if point.y >= frame.maxY - edgeMargin { return .maximize }

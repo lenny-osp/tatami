@@ -45,7 +45,9 @@ Other files:
 | `docs/images/` | Images used by the README |
 | `THIRD_PARTY_NOTICES.md` | Licenses of bundled third-party code, copied into the app by the build script |
 | `scripts/` | `build-app.sh`, `make-dmg.sh`, `make-appcast.sh`, `make-icon.sh`, `check-localizations.sh` |
-| `.github/workflows/release.yml` | Release build, signing, DMG, and appcast |
+| `Tests/TatamiTests/` | Unit tests (Swift Testing) |
+| `.github/workflows/ci.yml` | Runs localization checks, tests, and a full app + DMG build on every pull request and push to `main` |
+| `.github/workflows/release.yml` | Release build (after the same checks and tests), signing, DMG, and appcast |
 | `.github/FUNDING.yml` | Sponsor button (Buy Me a Coffee) |
 | `Package.resolved` | Pinned dependency versions; commit it when dependencies change |
 
@@ -59,7 +61,7 @@ Other files:
 - **Code comments are in Traditional Chinese.** Match the existing style. Identifiers are in English.
 - Keep changes small and match the surrounding code. Don't add dependencies without asking. The only dependency is Sparkle. If you add one, add its license to `THIRD_PARTY_NOTICES.md` and mention it in `about.credits`.
 - **New settings.** Store them in `AppSettings` (persisted in `UserDefaults`), and add them to `SettingsBackup` together with `makeBackup()` and `apply(_:)`. Otherwise export and import silently drop them. New `SettingsBackup` fields must be optional so older files still import. Machine-specific settings, such as Launch at Login, stay out of backups.
-- **Tests.** There is no test target, because XCTest isn't available without Xcode. To check pure logic, such as version comparison or backup encoding, compile the relevant files with a small `main.swift` in a scratch folder using `swiftc`, and run it.
+- **Tests.** Unit tests live in `Tests/TatamiTests` and use **Swift Testing** (`import Testing`, `@Test`, `#expect`), which ships with the Command Line Tools. XCTest is not available without Xcode, so don't use it. Run them with `swift test`. Keep logic that can be tested out of AppKit and AX calls. Put it in `nonisolated static` functions, as in `WindowMover.relativeFrame` and `SnapController.zone`, and add tests when you add or change such logic. Things that need real windows, screens, or permissions, such as moving windows, global hotkeys, and Sparkle, are checked by running the app.
 
 ## Localization (required for every user-visible change)
 
@@ -120,7 +122,8 @@ Required repository secrets: `TATAMI_CERT_P12`, `TATAMI_CERT_PASSWORD`, and `SPA
 ## Before finishing a change
 
 1. `./scripts/build-app.sh` succeeds with no new warnings.
-2. `./scripts/check-localizations.sh` passes, if any UI text changed.
-3. Relaunch the app and check the feature. Also check it in at least one non-English language, and in Arabic if the layout changed.
-4. Multi-screen behavior can't be tested with one display. Say so explicitly instead of claiming it works.
-5. Update the Help window topics if the change affects how users operate the app, and update the README feature list for new features.
+2. `swift test` passes.
+3. `./scripts/check-localizations.sh` passes. Besides comparing the languages, it checks that every key used in `Sources/` exists in English.
+4. Relaunch the app and check the feature. Also check it in at least one non-English language, and in Arabic if the layout changed.
+5. Multi-screen behavior can't be tested with one display. Say so explicitly instead of claiming it works.
+6. Update the Help window topics if the change affects how users operate the app, and update the README feature list for new features.

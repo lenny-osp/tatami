@@ -17,5 +17,7 @@ let package = Package(
                 .unsafeFlags(["-Xlinker", "-rpath", "-Xlinker", "@executable_path/../Frameworks"]),
             ]
         ),
+        // 用 Swift Testing（Command Line Tools 內建，不需要 Xcode）；執行：swift test
+        .testTarget(name: "TatamiTests", dependencies: ["Tatami"]),
     ]
 )

@@ -1,0 +1,53 @@
+# 每個 PR、以及合併（push）到 main 時自動執行：翻譯檢查、單元測試、打包 App 和 DMG。
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# 同一個 PR 推了新的 commit，就取消還在跑的舊檢查
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # build script 用 git 歷史計算版本號
+
+      - name: Cache Swift packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            .build/artifacts
+            .build/checkouts
+            ~/Library/Caches/org.swift.swiftpm
+          key: spm-${{ runner.os }}-${{ hashFiles('Package.resolved') }}
+
+      - name: Check localizations
+        run: ./scripts/check-localizations.sh
+
+      - name: Run tests
+        run: swift test
+
+      - name: Build app
+        # CI 沒有簽章憑證，會用臨時簽章；這裡只確認打包流程沒壞
+        run: ./scripts/build-app.sh
+
+      - name: Verify app bundle
+        run: |
+          codesign --verify --deep --strict build/Tatami.app
+          test -d build/Tatami.app/Contents/Frameworks/Sparkle.framework
+          test -f build/Tatami.app/Contents/Resources/AppIcon.icns
+          test -f build/Tatami.app/Contents/Resources/THIRD_PARTY_NOTICES.md
+          plutil -lint build/Tatami.app/Contents/Info.plist
+
+      - name: Build DMG
+        run: ./scripts/make-dmg.sh

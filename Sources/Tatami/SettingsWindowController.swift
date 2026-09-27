@@ -101,7 +101,7 @@ struct GeneralSettingsView: View {
             }
             Toggle(L("general.launchAtLogin"), isOn: Binding(
                 get: { settings.isLaunchAtLoginEnabled },
-                set: settings.setLaunchAtLogin
+                set: { settings.setLaunchAtLogin($0) }
             ))
         }
         .formStyle(.grouped)
@@ -115,7 +115,7 @@ struct ArrangementSettingsView: View {
 
     var body: some View {
         Form {
-            Toggle(isOn: Binding(get: { settings.isSnapEnabled }, set: settings.setSnapEnabled)) {
+            Toggle(isOn: Binding(get: { settings.isSnapEnabled }, set: { settings.setSnapEnabled($0) })) {
                 Text(L("snap.title"))
                 Text(L("snap.subtitle"))
             }

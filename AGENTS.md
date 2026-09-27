@@ -36,6 +36,7 @@ Other files: `Resources/Info.plist`, `Resources/<lang>.lproj/Localizable.strings
 ## Conventions
 
 - **Swift 6 strict concurrency.** UI and AX code is `@MainActor`. C and AppKit callbacks (Carbon handlers, `NSEvent` monitors) hop back with `MainActor.assumeIsolated`.
+- **Don't pass `@MainActor` method references as closures to SwiftUI**, for example `Binding(get: ..., set: settings.setFoo)`. Write `set: { settings.setFoo($0) }`. The method-reference form crashes the Swift 6.3 compiler used on GitHub Actions (signal 6, "SmallVector unable to grow"), even though newer local toolchains compile it.
 - **Coordinates.** Code works in Cocoa coordinates: origin at the bottom-left of the primary screen, y pointing up. The AX API uses the top-left origin with y pointing down. Convert only inside `WindowMover` (`flip`). Use `screen.visibleFrame`, which excludes the menu bar and the Dock, as the target area.
 - **Grid rows** count from the top: `row 0` is the top row.
 - **Opening windows from the menu bar.** Call `NSApp.activate()` and `makeKeyAndOrderFront` inside `DispatchQueue.main.async`, then call `orderFrontRegardless()`. If you activate while the menu is still closing, macOS may ignore it and the window opens behind other apps.

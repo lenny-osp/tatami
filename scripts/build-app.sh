@@ -35,6 +35,7 @@ echo "Version $(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "
     "($(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "$APP/Contents/Info.plist"))"
 mkdir -p "$APP/Contents/Resources"
 cp -R Resources/*.lproj "$APP/Contents/Resources/"
+cp Resources/AppIcon.icns "$APP/Contents/Resources/"
 
 if security find-identity -p codesigning | grep -q "\"$SIGN_IDENTITY\""; then
     echo "Signing with \"$SIGN_IDENTITY\""

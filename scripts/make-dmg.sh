@@ -1,6 +1,6 @@
 #!/bin/bash
 # 把 build/Tatami.app 打包成 DMG：打開後會看到 Tatami 和「應用程式」資料夾的捷徑，
-# 把 Tatami 拖進去就完成安裝。請先執行 ./scripts/build-app.sh。
+# 以及開啟說明文字檔。把 Tatami 拖進去就完成安裝。請先執行 ./scripts/build-app.sh。
 #
 # 用法：./scripts/make-dmg.sh [輸出檔名]
 #   沒指定檔名時，使用 build/Tatami-<版本>.dmg
@@ -22,6 +22,8 @@ trap 'rm -rf "$STAGING"' EXIT
 # ditto 會保留 .app 的權限與簽章
 ditto "$APP" "$STAGING/Tatami.app"
 ln -s /Applications "$STAGING/Applications"
+# App 沒有經過 Apple 公證，第一次打開會被擋下；附上多語言的開啟說明
+cp "Packaging/How to Open Tatami.txt" "$STAGING/"
 
 rm -f "$DMG"
 hdiutil create \

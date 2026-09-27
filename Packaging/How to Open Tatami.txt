@@ -1,0 +1,122 @@
+How to Open Tatami
+==================
+
+Tatami is free and open source, but it is not notarized by Apple,
+so macOS blocks it the first time you open it. To allow it:
+
+1. Drag Tatami into the Applications folder.
+2. Open Tatami. When macOS says "Tatami.app" Not Opened,
+   click Done. Do not click Move to Trash.
+3. Open System Settings > Privacy & Security.
+4. Scroll down to Security. Next to the message saying Tatami was blocked,
+   click Open Anyway, then enter your password.
+5. Open Tatami again and click Open Anyway.
+
+Then Tatami asks for Accessibility permission, which it needs to move windows.
+Turn on Tatami in System Settings > Privacy & Security > Accessibility.
+
+You need to do this again after each update.
+
+Using Terminal instead of steps 2-5:
+    xattr -dr com.apple.quarantine /Applications/Tatami.app
+
+More help: https://github.com/lenny-osp/tatami
+
+
+繁體中文
+--------
+Tatami 是免費的開源軟體，但沒有經過 Apple 公證，所以第一次打開時會被 macOS 擋下。
+1. 把 Tatami 拖到「應用程式」資料夾。
+2. 打開 Tatami。出現「未打開 "Tatami.app"」時，關閉訊息，不要丟到垃圾桶。
+3. 打開「系統設定 > 隱私權與安全性」。
+4. 往下捲到「安全性」，在 Tatami 被阻擋的訊息旁按「強制打開」（Open Anyway），並輸入密碼。
+5. 再打開一次 Tatami，按「強制打開」。
+之後請到「系統設定 > 隱私權與安全性 > 輔助使用」開啟 Tatami。每次更新版本後都要重做一次。
+
+
+简体中文
+--------
+Tatami 是免费的开源软件，但没有经过 Apple 公证，所以第一次打开时会被 macOS 阻止。
+1. 把 Tatami 拖到“应用程序”文件夹。
+2. 打开 Tatami。出现“未打开 "Tatami.app"”时，关闭提示，不要移到废纸篓。
+3. 打开“系统设置 > 隐私与安全性”。
+4. 向下滚动到“安全性”，在 Tatami 被阻止的提示旁点击“仍要打开”（Open Anyway），并输入密码。
+5. 再次打开 Tatami，点击“仍要打开”。
+之后请在“系统设置 > 隐私与安全性 > 辅助功能”中开启 Tatami。每次更新版本后都需要重新操作。
+
+
+日本語
+------
+Tatami は無料のオープンソースソフトウェアですが、Apple の公証を受けていないため、初回起動時に macOS によってブロックされます。
+1. Tatami を「アプリケーション」フォルダにドラッグします。
+2. Tatami を開きます。「"Tatami.app" は開かれませんでした」と表示されたら、ゴミ箱に入れずにメッセージを閉じます。
+3. 「システム設定 > プライバシーとセキュリティ」を開きます。
+4. 「セキュリティ」までスクロールし、Tatami がブロックされたというメッセージの横にある「このまま開く」（Open Anyway）をクリックして、パスワードを入力します。
+5. もう一度 Tatami を開き、「このまま開く」をクリックします。
+その後、「システム設定 > プライバシーとセキュリティ > アクセシビリティ」で Tatami をオンにしてください。アップデートのたびに同じ操作が必要です。
+
+
+한국어
+------
+Tatami는 무료 오픈 소스 소프트웨어이지만 Apple의 공증을 받지 않아 처음 열 때 macOS가 차단합니다.
+1. Tatami를 '응용 프로그램' 폴더로 드래그하세요.
+2. Tatami를 여세요. '"Tatami.app"이(가) 열리지 않음'이 표시되면 휴지통으로 옮기지 말고 메시지를 닫으세요.
+3. '시스템 설정 > 개인정보 보호 및 보안'을 여세요.
+4. '보안'까지 스크롤한 다음, Tatami가 차단되었다는 메시지 옆의 '그래도 열기'(Open Anyway)를 클릭하고 암호를 입력하세요.
+5. Tatami를 다시 열고 '그래도 열기'를 클릭하세요.
+그런 다음 '시스템 설정 > 개인정보 보호 및 보안 > 손쉬운 사용'에서 Tatami를 켜세요. 업데이트할 때마다 다시 해야 합니다.
+
+
+Français
+--------
+Tatami est un logiciel libre et gratuit, mais il n'est pas notarié par Apple : macOS le bloque donc à la première ouverture.
+1. Faites glisser Tatami dans le dossier Applications.
+2. Ouvrez Tatami. Lorsque macOS indique que « Tatami.app » n'a pas été ouvert, fermez le message sans le placer dans la corbeille.
+3. Ouvrez Réglages Système > Confidentialité et sécurité.
+4. Faites défiler jusqu'à Sécurité. À côté du message indiquant que Tatami a été bloqué, cliquez sur « Ouvrir quand même » (Open Anyway), puis saisissez votre mot de passe.
+5. Ouvrez de nouveau Tatami et cliquez sur « Ouvrir quand même ».
+Activez ensuite Tatami dans Réglages Système > Confidentialité et sécurité > Accessibilité. Vous devrez recommencer après chaque mise à jour.
+
+
+Deutsch
+-------
+Tatami ist kostenlose Open-Source-Software, aber nicht von Apple notarisiert. Deshalb blockiert macOS die App beim ersten Öffnen.
+1. Ziehe Tatami in den Ordner „Programme“.
+2. Öffne Tatami. Wenn macOS meldet, dass „Tatami.app“ nicht geöffnet wurde, schließe die Meldung, ohne die App in den Papierkorb zu legen.
+3. Öffne Systemeinstellungen > Datenschutz & Sicherheit.
+4. Scrolle zu „Sicherheit“. Klicke neben der Meldung, dass Tatami blockiert wurde, auf „Dennoch öffnen“ (Open Anyway) und gib dein Passwort ein.
+5. Öffne Tatami erneut und klicke auf „Dennoch öffnen“.
+Aktiviere danach Tatami unter Systemeinstellungen > Datenschutz & Sicherheit > Bedienungshilfen. Nach jedem Update ist dies erneut nötig.
+
+
+Español
+-------
+Tatami es software libre y gratuito, pero no está notarizado por Apple, así que macOS lo bloquea la primera vez que lo abres.
+1. Arrastra Tatami a la carpeta Aplicaciones.
+2. Abre Tatami. Cuando macOS indique que no se abrió «Tatami.app», cierra el aviso sin moverlo a la Papelera.
+3. Abre Ajustes del Sistema > Privacidad y seguridad.
+4. Desplázate hasta Seguridad. Junto al mensaje de que Tatami fue bloqueado, haz clic en «Abrir igualmente» (Open Anyway) e introduce tu contraseña.
+5. Abre Tatami de nuevo y haz clic en «Abrir igualmente».
+Después, activa Tatami en Ajustes del Sistema > Privacidad y seguridad > Accesibilidad. Tendrás que repetirlo tras cada actualización.
+
+
+हिन्दी
+------
+Tatami मुफ़्त और ओपन सोर्स है, लेकिन Apple द्वारा नोटराइज़ नहीं किया गया है, इसलिए पहली बार खोलने पर macOS इसे रोक देता है।
+1. Tatami को Applications फ़ोल्डर में खींचें।
+2. Tatami खोलें। जब macOS बताए कि "Tatami.app" नहीं खुला, तो संदेश बंद करें — इसे ट्रैश में न डालें।
+3. System Settings > Privacy & Security खोलें।
+4. नीचे Security तक स्क्रॉल करें। Tatami के रोके जाने वाले संदेश के पास Open Anyway पर क्लिक करें और अपना पासवर्ड डालें।
+5. Tatami को फिर से खोलें और Open Anyway पर क्लिक करें।
+इसके बाद System Settings > Privacy & Security > Accessibility में Tatami चालू करें। हर अपडेट के बाद यह दोबारा करना होगा।
+
+
+العربية
+-------
+‏Tatami برنامج مجاني ومفتوح المصدر، لكنه غير موثّق من Apple، لذلك يحظره macOS عند فتحه لأول مرة.
+1. اسحب Tatami إلى مجلد التطبيقات.
+2. افتح Tatami. عندما يظهر أن "Tatami.app" لم يُفتح، أغلق الرسالة دون نقله إلى سلة المهملات.
+3. افتح إعدادات النظام > الخصوصية والأمان.
+4. مرّر إلى قسم الأمان. بجانب رسالة حظر Tatami، انقر على «فتح على أي حال» (Open Anyway) ثم أدخل كلمة السر.
+5. افتح Tatami مرة أخرى وانقر على «فتح على أي حال».
+بعد ذلك فعّل Tatami من إعدادات النظام > الخصوصية والأمان > تسهيلات الاستخدام. يجب تكرار ذلك بعد كل تحديث.

@@ -84,7 +84,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             NSApp.activate()
             NSApp.orderFrontStandardAboutPanel(options: [
                 .applicationName: "Tatami",
-                .applicationIcon: TatamiIcon.appIcon(),
+                .applicationIcon: NSApp.applicationIconImage as Any,
                 .applicationVersion: version,
                 .version: "",
                 .credits: credits,

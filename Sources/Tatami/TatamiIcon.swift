@@ -1,6 +1,6 @@
 import AppKit
 
-/// 選單列圖示：四疊半榻榻米的風車排列，四塊整疊繞著中間的半疊。
+/// 選單列圖示：四疊半榻榻米的風車排列（App 圖示由 scripts/make-icon.swift 產生，排列方式相同），四塊整疊繞著中間的半疊。
 enum TatamiIcon {
     enum Style {
         /// 實心塊狀，塊與塊之間留空隙
@@ -17,13 +17,6 @@ enum TatamiIcon {
         CGRect(x: 0, y: 1, width: 1, height: 2), // 左方，直放
         CGRect(x: 1, y: 1, width: 1, height: 1), // 中間的半疊
     ]
-
-    /// 「關於」視窗用的大圖示，使用系統強調色
-    static func appIcon(size: CGFloat = 128) -> NSImage {
-        let image = drawImage(style: .filled, size: size, color: .controlAccentColor)
-        image.accessibilityDescription = "Tatami"
-        return image
-    }
 
     static func menuBarImage(style: Style = .filled, size: CGFloat = 18) -> NSImage {
         let image = drawImage(style: style, size: size, color: .black)

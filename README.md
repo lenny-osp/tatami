@@ -21,6 +21,36 @@ Tatami is named after Japanese tatami mats, which are laid out on a grid to form
 
 ## Install
 
+### Download
+
+1. Download `Tatami-<version>.dmg` from [Releases](https://github.com/lenny-osp/tatami/releases).
+2. Open the DMG and drag **Tatami** into **Applications**.
+
+The DMG also includes **How to Open Tatami.txt**, which has the steps below in all 10 supported languages.
+
+### Opening Tatami for the first time
+
+Tatami is free and open source, but it is not notarized by Apple. The first time you open it, macOS blocks it with this message:
+
+<img src="docs/images/gatekeeper-not-opened.png" alt="“Tatami.app” Not Opened dialog" width="300">
+
+To allow it:
+
+1. Click **Done**. Do not click **Move to Trash**.
+2. Open **System Settings → Privacy & Security**.
+3. Scroll down to **Security**. Next to the message saying Tatami was blocked, click **Open Anyway**, then enter your password.
+4. Open Tatami again and click **Open Anyway**.
+
+The **Open Anyway** button appears only for about an hour after macOS blocks the app. If you don't see it, open Tatami again to show the message again.
+
+If you prefer Terminal, this one command replaces steps 1–4:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/Tatami.app
+```
+
+You need to do this again after each update, because release builds are not signed with an Apple Developer ID.
+
 ### Build from source
 
 You need the Xcode Command Line Tools. Install them with `xcode-select --install`. The full Xcode app is not needed.
@@ -32,17 +62,7 @@ cd tatami
 open build/Tatami.app
 ```
 
-To install it, copy `build/Tatami.app` to `/Applications`. To build a DMG, run `./scripts/make-dmg.sh` after building.
-
-### Download
-
-Download `Tatami-<version>.dmg` from [Releases](https://github.com/lenny-osp/tatami/releases), open it, and drag **Tatami** into **Applications**.
-
-Release builds are not notarized by Apple. macOS will block the app the first time you open it. To allow it, go to **System Settings → Privacy & Security** and click **Open Anyway**, or run:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/Tatami.app
-```
+To install it, copy `build/Tatami.app` to `/Applications`. To build a DMG, run `./scripts/make-dmg.sh` after building. An app you build yourself is not blocked by macOS.
 
 ## First launch
 

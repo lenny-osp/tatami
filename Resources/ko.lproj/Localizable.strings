@@ -46,3 +46,9 @@
 
 "menu.about" = "Tatami에 관하여";
 "about.credits" = "격자로 윈도우를 배치합니다.\nMIT 라이선스로 공개된 오픈 소스입니다.";
+
+"menu.checkForUpdates" = "업데이트 확인…";
+"general.autoUpdate" = "자동으로 업데이트 확인";
+"general.autoUpdate.subtitle" = "Tatami를 시작할 때마다 GitHub에서 새 버전을 확인합니다";
+"help.updates.title" = "업데이트";
+"help.updates.body" = "메뉴 막대 아이콘에서 ‘업데이트 확인…’을 선택하거나 설정 → 일반에서 자동 확인을 켜세요. 새 버전이 있으면 ‘업데이트 설치’를 클릭하세요. Tatami가 다운로드하고 설치한 뒤 다시 시작합니다. 손쉬운 사용 권한은 그대로 유지됩니다.";

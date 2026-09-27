@@ -12,6 +12,7 @@ Tatami is named after Japanese tatami mats, which are laid out on a grid to form
 - **Function shortcuts.** Show the grid, or move the current window to the next screen while keeping its relative position.
 - **Multiple displays.** A grid panel appears on every screen, and the window moves to the screen you select on.
 - **10 languages.** English, 繁體中文, 简体中文, Français, Deutsch, Español, हिन्दी, 日本語, 한국어, العربية. The language is chosen inside the app.
+- **Automatic updates** with [Sparkle](https://sparkle-project.org). Updates are verified with an EdDSA signature before they are installed.
 - Launch at login. The app lives only in the menu bar and has no Dock icon.
 
 ## Requirements
@@ -49,7 +50,7 @@ If you prefer Terminal, this one command replaces steps 1–4:
 xattr -dr com.apple.quarantine /Applications/Tatami.app
 ```
 
-You need to do this again after each update, because release builds are not signed with an Apple Developer ID.
+You only need to do this once. Later versions update themselves: choose **Check for Updates…** from the menu bar icon, or leave automatic checks on in **Settings → General**. Updates keep your Accessibility permission.
 
 ### Build from source
 
@@ -72,7 +73,7 @@ To install it, copy `build/Tatami.app` to `/Applications`. To build a DMG, run `
 
 ## Troubleshooting
 
-- **Windows don't move after rebuilding.** macOS ties Accessibility permission to the app's code signature, and an ad-hoc signed build gets a new signature every time it is rebuilt. Remove Tatami from the Accessibility list and add it again. Developers can create a self-signed code-signing certificate named `Tatami Dev` in Keychain Access, and the build script will then use it, keeping the permission across rebuilds.
+- **Windows don't move even though Tatami is turned on in Accessibility.** macOS ties the permission to the app's code signature, so an entry left by a differently signed copy has no effect. Click the permission item in the Tatami menu: Tatami clears its old entry and adds itself again, and you only need to turn the switch on. Developers can create a self-signed code-signing certificate named `Tatami Dev` in Keychain Access; the build script then uses it, so the permission is kept across rebuilds.
 - **A shortcut can't be recorded or does nothing.** Another tool, such as BetterTouchTool, Raycast, or Alfred, may already use the same key combination.
 
 ## Contributing

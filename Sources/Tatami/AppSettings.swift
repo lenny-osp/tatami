@@ -15,6 +15,7 @@ final class AppSettings: ObservableObject {
     private static let showGridKeyComboKey = "showGridKeyCombo"
     private static let nextScreenKeyComboKey = "nextScreenKeyCombo"
     private static let languageKey = "language"
+    private static let autoUpdateKey = "autoCheckForUpdates"
 
     /// 格線欄數、列數的允許範圍
     static let gridSizeRange = 1...10
@@ -39,6 +40,11 @@ final class AppSettings: ObservableObject {
             onShortcutsChanged?()
         }
     }
+    /// 每次啟動時自動檢查更新，預設開啟
+    @Published var isAutoUpdateEnabled: Bool {
+        didSet { UserDefaults.standard.set(isAutoUpdateEnabled, forKey: Self.autoUpdateKey) }
+    }
+
     /// 介面語言，預設英文
     @Published var language: AppLanguage {
         didSet {
@@ -90,10 +96,12 @@ final class AppSettings: ObservableObject {
         self.snapController = snapController
         UserDefaults.standard.register(defaults: [
             Self.snapEnabledKey: true,
+            Self.autoUpdateKey: true,
             Self.gridColumnsKey: 6,
             Self.gridRowsKey: 6,
         ])
         isSnapEnabled = UserDefaults.standard.bool(forKey: Self.snapEnabledKey)
+        isAutoUpdateEnabled = UserDefaults.standard.bool(forKey: Self.autoUpdateKey)
         let language = UserDefaults.standard.string(forKey: Self.languageKey).flatMap(AppLanguage.init) ?? .english
         self.language = language
         // init 裡不會觸發 didSet，要自己設定

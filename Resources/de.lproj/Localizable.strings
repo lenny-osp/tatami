@@ -46,3 +46,9 @@
 
 "menu.about" = "Über Tatami";
 "about.credits" = "Fenster in einem Raster anordnen.\nOpen Source unter der MIT-Lizenz.";
+
+"menu.checkForUpdates" = "Nach Updates suchen …";
+"general.autoUpdate" = "Automatisch nach Updates suchen";
+"general.autoUpdate.subtitle" = "Prüft bei jedem Start von Tatami auf GitHub, ob es eine neue Version gibt";
+"help.updates.title" = "Updates";
+"help.updates.body" = "Wähle „Nach Updates suchen …“ im Menüleistensymbol oder aktiviere die automatische Suche unter Einstellungen → Allgemein. Wird eine neue Version gefunden, klicke auf „Update installieren“ – Tatami lädt sie, installiert sie und startet neu. Die Bedienungshilfen-Berechtigung bleibt erhalten.";

@@ -14,6 +14,27 @@ enum Accessibility {
         _ = AXIsProcessTrustedWithOptions(options)
     }
 
+    /// 清除這個 App 在「輔助使用」清單裡的紀錄。
+    ///
+    /// macOS 用簽章辨識 App；簽章不同的舊版本（例如臨時簽章的版本）留下的紀錄，
+    /// 就算開關是打開的也對新版本無效，使用者原本得手動「移除 → 新增 → 打開」。
+    /// 先清掉紀錄，之後 requestIfNeeded() 會重新加入，使用者只要打開開關一次。
+    /// tccutil 只能重設自己指定的 bundle ID，不需要管理員權限。
+    static func resetStaleEntry() {
+        guard let bundleID = Bundle.main.bundleIdentifier else { return }
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: "/usr/bin/tccutil")
+        process.arguments = ["reset", "Accessibility", bundleID]
+        process.standardOutput = FileHandle.nullDevice
+        process.standardError = FileHandle.nullDevice
+        do {
+            try process.run()
+            process.waitUntilExit()
+        } catch {
+            // 失敗也沒關係，使用者還是可以到系統設定手動處理
+        }
+    }
+
     /// 打開「系統設定 → 隱私權與安全性 → 輔助使用」。
     static func openSettings() {
         let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!

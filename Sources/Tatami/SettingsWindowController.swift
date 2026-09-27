@@ -103,6 +103,10 @@ struct GeneralSettingsView: View {
                 get: { settings.isLaunchAtLoginEnabled },
                 set: { settings.setLaunchAtLogin($0) }
             ))
+            Toggle(isOn: $settings.isAutoUpdateEnabled) {
+                Text(L("general.autoUpdate"))
+                Text(L("general.autoUpdate.subtitle"))
+            }
         }
         .formStyle(.grouped)
         .frame(width: settingsWidth)

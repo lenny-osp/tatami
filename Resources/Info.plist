@@ -35,6 +35,10 @@
     </array>
     <key>NSHumanReadableCopyright</key>
     <string>Copyright © 2026 Chihling Wang. MIT License.</string>
+    <key>SUFeedURL</key>
+    <string>https://github.com/lenny-osp/tatami/releases/latest/download/appcast.xml</string>
+    <key>SUPublicEDKey</key>
+    <string>EJXfTDSovXaGcX2ui4E5MdpEsP1YyTdJmdDbE5HSoK8=</string>
     <key>LSUIElement</key>
     <true/>
 </dict>

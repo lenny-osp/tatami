@@ -15,7 +15,8 @@ so macOS blocks it the first time you open it. To allow it:
 Then Tatami asks for Accessibility permission, which it needs to move windows.
 Turn on Tatami in System Settings > Privacy & Security > Accessibility.
 
-You need to do this again after each update.
+You only need to do this once. Later versions update themselves:
+choose Check for Updates... from the Tatami menu.
 
 Using Terminal instead of steps 2-5:
     xattr -dr com.apple.quarantine /Applications/Tatami.app
@@ -31,7 +32,7 @@ Tatami 是免費的開源軟體，但沒有經過 Apple 公證，所以第一次
 3. 打開「系統設定 > 隱私權與安全性」。
 4. 往下捲到「安全性」，在 Tatami 被阻擋的訊息旁按「強制打開」（Open Anyway），並輸入密碼。
 5. 再打開一次 Tatami，按「強制打開」。
-之後請到「系統設定 > 隱私權與安全性 > 輔助使用」開啟 Tatami。每次更新版本後都要重做一次。
+之後請到「系統設定 > 隱私權與安全性 > 輔助使用」開啟 Tatami。只需要做一次，之後的版本可以從選單的「檢查更新…」自動更新。
 
 
 简体中文
@@ -42,7 +43,7 @@ Tatami 是免费的开源软件，但没有经过 Apple 公证，所以第一次
 3. 打开“系统设置 > 隐私与安全性”。
 4. 向下滚动到“安全性”，在 Tatami 被阻止的提示旁点击“仍要打开”（Open Anyway），并输入密码。
 5. 再次打开 Tatami，点击“仍要打开”。
-之后请在“系统设置 > 隐私与安全性 > 辅助功能”中开启 Tatami。每次更新版本后都需要重新操作。
+之后请在“系统设置 > 隐私与安全性 > 辅助功能”中开启 Tatami。只需要操作一次，之后的版本可以通过菜单中的“检查更新…”自动更新。
 
 
 日本語
@@ -53,7 +54,7 @@ Tatami は無料のオープンソースソフトウェアですが、Apple の�
 3. 「システム設定 > プライバシーとセキュリティ」を開きます。
 4. 「セキュリティ」までスクロールし、Tatami がブロックされたというメッセージの横にある「このまま開く」（Open Anyway）をクリックして、パスワードを入力します。
 5. もう一度 Tatami を開き、「このまま開く」をクリックします。
-その後、「システム設定 > プライバシーとセキュリティ > アクセシビリティ」で Tatami をオンにしてください。アップデートのたびに同じ操作が必要です。
+その後、「システム設定 > プライバシーとセキュリティ > アクセシビリティ」で Tatami をオンにしてください。この操作は最初の一度だけです。以降のバージョンはメニューの「アップデートを確認…」から自動で更新できます。
 
 
 한국어
@@ -64,7 +65,7 @@ Tatami는 무료 오픈 소스 소프트웨어이지만 Apple의 공증을 받�
 3. '시스템 설정 > 개인정보 보호 및 보안'을 여세요.
 4. '보안'까지 스크롤한 다음, Tatami가 차단되었다는 메시지 옆의 '그래도 열기'(Open Anyway)를 클릭하고 암호를 입력하세요.
 5. Tatami를 다시 열고 '그래도 열기'를 클릭하세요.
-그런 다음 '시스템 설정 > 개인정보 보호 및 보안 > 손쉬운 사용'에서 Tatami를 켜세요. 업데이트할 때마다 다시 해야 합니다.
+그런 다음 '시스템 설정 > 개인정보 보호 및 보안 > 손쉬운 사용'에서 Tatami를 켜세요. 이 작업은 처음 한 번만 하면 됩니다. 이후 버전은 메뉴의 '업데이트 확인…'으로 자동 업데이트됩니다.
 
 
 Français
@@ -75,7 +76,7 @@ Tatami est un logiciel libre et gratuit, mais il n'est pas notarié par Apple : 
 3. Ouvrez Réglages Système > Confidentialité et sécurité.
 4. Faites défiler jusqu'à Sécurité. À côté du message indiquant que Tatami a été bloqué, cliquez sur « Ouvrir quand même » (Open Anyway), puis saisissez votre mot de passe.
 5. Ouvrez de nouveau Tatami et cliquez sur « Ouvrir quand même ».
-Activez ensuite Tatami dans Réglages Système > Confidentialité et sécurité > Accessibilité. Vous devrez recommencer après chaque mise à jour.
+Activez ensuite Tatami dans Réglages Système > Confidentialité et sécurité > Accessibilité. Cette opération n'est nécessaire qu'une fois : les versions suivantes se mettent à jour via « Rechercher des mises à jour… » dans le menu.
 
 
 Deutsch
@@ -86,7 +87,7 @@ Tatami ist kostenlose Open-Source-Software, aber nicht von Apple notarisiert. De
 3. Öffne Systemeinstellungen > Datenschutz & Sicherheit.
 4. Scrolle zu „Sicherheit“. Klicke neben der Meldung, dass Tatami blockiert wurde, auf „Dennoch öffnen“ (Open Anyway) und gib dein Passwort ein.
 5. Öffne Tatami erneut und klicke auf „Dennoch öffnen“.
-Aktiviere danach Tatami unter Systemeinstellungen > Datenschutz & Sicherheit > Bedienungshilfen. Nach jedem Update ist dies erneut nötig.
+Aktiviere danach Tatami unter Systemeinstellungen > Datenschutz & Sicherheit > Bedienungshilfen. Das ist nur einmal nötig. Spätere Versionen aktualisieren sich über „Nach Updates suchen …“ im Menü.
 
 
 Español
@@ -97,7 +98,7 @@ Tatami es software libre y gratuito, pero no está notarizado por Apple, así qu
 3. Abre Ajustes del Sistema > Privacidad y seguridad.
 4. Desplázate hasta Seguridad. Junto al mensaje de que Tatami fue bloqueado, haz clic en «Abrir igualmente» (Open Anyway) e introduce tu contraseña.
 5. Abre Tatami de nuevo y haz clic en «Abrir igualmente».
-Después, activa Tatami en Ajustes del Sistema > Privacidad y seguridad > Accesibilidad. Tendrás que repetirlo tras cada actualización.
+Después, activa Tatami en Ajustes del Sistema > Privacidad y seguridad > Accesibilidad. Solo tienes que hacerlo una vez: las versiones posteriores se actualizan desde «Buscar actualizaciones…» en el menú.
 
 
 हिन्दी
@@ -108,7 +109,7 @@ Tatami मुफ़्त और ओपन सोर्स है, लेकि�
 3. System Settings > Privacy & Security खोलें।
 4. नीचे Security तक स्क्रॉल करें। Tatami के रोके जाने वाले संदेश के पास Open Anyway पर क्लिक करें और अपना पासवर्ड डालें।
 5. Tatami को फिर से खोलें और Open Anyway पर क्लिक करें।
-इसके बाद System Settings > Privacy & Security > Accessibility में Tatami चालू करें। हर अपडेट के बाद यह दोबारा करना होगा।
+इसके बाद System Settings > Privacy & Security > Accessibility में Tatami चालू करें। यह सिर्फ़ एक बार करना होगा। बाद के संस्करण मेनू में “अपडेट जाँचें…” से अपने-आप अपडेट हो जाते हैं।
 
 
 العربية
@@ -119,4 +120,4 @@ Tatami मुफ़्त और ओपन सोर्स है, लेकि�
 3. افتح إعدادات النظام > الخصوصية والأمان.
 4. مرّر إلى قسم الأمان. بجانب رسالة حظر Tatami، انقر على «فتح على أي حال» (Open Anyway) ثم أدخل كلمة السر.
 5. افتح Tatami مرة أخرى وانقر على «فتح على أي حال».
-بعد ذلك فعّل Tatami من إعدادات النظام > الخصوصية والأمان > تسهيلات الاستخدام. يجب تكرار ذلك بعد كل تحديث.
+بعد ذلك فعّل Tatami من إعدادات النظام > الخصوصية والأمان > تسهيلات الاستخدام. يلزم ذلك مرة واحدة فقط، إذ تُحدَّث الإصدارات اللاحقة تلقائيًا من «التحقق من وجود تحديثات…» في القائمة.

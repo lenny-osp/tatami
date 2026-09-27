@@ -46,3 +46,9 @@
 
 "menu.about" = "關於 Tatami";
 "about.credits" = "用格線排列視窗。\n以 MIT 授權開源。";
+
+"menu.checkForUpdates" = "檢查更新…";
+"general.autoUpdate" = "自動檢查更新";
+"general.autoUpdate.subtitle" = "每次啟動 Tatami 時，到 GitHub 檢查是否有新版本";
+"help.updates.title" = "更新";
+"help.updates.body" = "從選單列圖示選「檢查更新…」，或在「設定 → 一般」開啟自動檢查。找到新版本時按「安裝更新」，Tatami 會自動下載、安裝並重新啟動，輔助使用權限也會保留。";

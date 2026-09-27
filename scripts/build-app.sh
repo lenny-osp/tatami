@@ -21,6 +21,9 @@ APP=build/Tatami.app
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS"
 cp .build/release/Tatami "$APP/Contents/MacOS/Tatami"
+# 自動更新框架；ditto 會保留 framework 裡的符號連結
+mkdir -p "$APP/Contents/Frameworks"
+ditto .build/release/Sparkle.framework "$APP/Contents/Frameworks/Sparkle.framework"
 cp Resources/Info.plist "$APP/Contents/Info.plist"
 
 VERSION="${VERSION:-$(git describe --tags 2>/dev/null | sed 's/^v//' || true)}"
@@ -39,10 +42,20 @@ cp Resources/AppIcon.icns "$APP/Contents/Resources/"
 
 if security find-identity -p codesigning | grep -q "\"$SIGN_IDENTITY\""; then
     echo "Signing with \"$SIGN_IDENTITY\""
-    codesign --force --sign "$SIGN_IDENTITY" "$APP"
+    IDENTITY="$SIGN_IDENTITY"
 else
     echo "Certificate \"$SIGN_IDENTITY\" not found, using ad-hoc signature"
-    codesign --force --sign - "$APP"
+    IDENTITY="-"
 fi
+
+# 由內而外簽署：先簽 Sparkle 裡的各個元件，再簽 framework，最後簽 App
+sign() { codesign --force --sign "$IDENTITY" "$@"; }
+SPARKLE="$APP/Contents/Frameworks/Sparkle.framework/Versions/B"
+sign "$SPARKLE/XPCServices/Installer.xpc"
+sign --preserve-metadata=entitlements "$SPARKLE/XPCServices/Downloader.xpc"
+sign "$SPARKLE/Autoupdate"
+sign "$SPARKLE/Updater.app"
+sign "$APP/Contents/Frameworks/Sparkle.framework"
+sign "$APP"
 
 echo "Built $APP"

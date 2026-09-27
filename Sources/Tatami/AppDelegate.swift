@@ -8,6 +8,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private let settingsItem = NSMenuItem()
     private let helpItem = NSMenuItem()
     private let aboutItem = NSMenuItem()
+    private let checkForUpdatesItem = NSMenuItem()
+    private let updater = Updater()
     private let quitItem = NSMenuItem()
     private let snapController = SnapController()
     private lazy var settings = AppSettings(snapController: snapController)
@@ -40,6 +42,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         aboutItem.action = #selector(showAbout)
         aboutItem.target = self
         menu.addItem(aboutItem)
+        checkForUpdatesItem.action = #selector(checkForUpdates)
+        checkForUpdatesItem.target = self
+        menu.addItem(checkForUpdatesItem)
         menu.addItem(.separator())
         quitItem.action = #selector(NSApplication.terminate(_:))
         quitItem.keyEquivalent = "q"
@@ -47,11 +52,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         statusItem.menu = menu
 
         if !Accessibility.isTrusted {
+            // 清掉舊版本留下的失效紀錄，再請系統跳出授權對話框，使用者只要打開開關一次
+            Accessibility.resetStaleEntry()
             Accessibility.requestIfNeeded()
         }
 
         // 讀取設定並套用（啟動 Snap、註冊快捷鍵）
         _ = shortcutController
+
+        if settings.isAutoUpdateEnabled {
+            updater.checkInBackground()
+        }
     }
 
     // 每次打開選單時更新文字：重新檢查權限狀態，並套用目前的語言
@@ -63,11 +74,16 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         settingsItem.title = L("menu.settings")
         helpItem.title = L("menu.help")
         aboutItem.title = L("menu.about")
+        checkForUpdatesItem.title = L("menu.checkForUpdates")
         quitItem.title = L("menu.quit")
     }
 
     @objc private func showGrid() {
         gridController.show()
+    }
+
+    @objc private func checkForUpdates() {
+        updater.checkForUpdates()
     }
 
     @objc private func showAbout() {
@@ -103,6 +119,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     @objc private func openAccessibilitySettings() {
+        if !Accessibility.isTrusted {
+            // 清單裡可能還留著舊版本的紀錄（開關打開了卻沒作用），先清掉再重新加入
+            Accessibility.resetStaleEntry()
+            Accessibility.requestIfNeeded()
+        }
         Accessibility.openSettings()
     }
 }

@@ -46,3 +46,9 @@
 
 "menu.about" = "关于 Tatami";
 "about.credits" = "用网格排列窗口。\n以 MIT 许可证开源。";
+
+"menu.checkForUpdates" = "检查更新…";
+"general.autoUpdate" = "自动检查更新";
+"general.autoUpdate.subtitle" = "每次启动 Tatami 时，在 GitHub 检查是否有新版本";
+"help.updates.title" = "更新";
+"help.updates.body" = "从菜单栏图标选择“检查更新…”，或在“设置 → 通用”中开启自动检查。发现新版本时点击“安装更新”，Tatami 会自动下载、安装并重新启动，辅助功能权限也会保留。";

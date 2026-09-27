@@ -46,3 +46,9 @@
 
 "menu.about" = "À propos de Tatami";
 "about.credits" = "Disposez vos fenêtres sur une grille.\nLogiciel libre sous licence MIT.";
+
+"menu.checkForUpdates" = "Rechercher des mises à jour…";
+"general.autoUpdate" = "Rechercher les mises à jour automatiquement";
+"general.autoUpdate.subtitle" = "Vérifie sur GitHub si une nouvelle version existe à chaque démarrage de Tatami";
+"help.updates.title" = "Mises à jour";
+"help.updates.body" = "Choisissez « Rechercher des mises à jour… » dans l’icône de la barre des menus, ou activez la recherche automatique dans Réglages → Général. Lorsqu’une nouvelle version est trouvée, cliquez sur Installer la mise à jour : Tatami la télécharge, l’installe et redémarre. Votre autorisation d’accessibilité est conservée.";

@@ -1,7 +1,12 @@
 # 發佈 GitHub Release 時自動編譯 Tatami.app，版本號使用 release 的 tag，
-# 打包成 DMG 後上傳到該 release。
+# 用固定憑證簽署、打包成 DMG，再產生 Sparkle 的 appcast.xml，全部上傳到該 release。
 #
 # 使用方式：在 GitHub 建立 release，tag 取名為 v1.2.3 或 1.2.3，按下 Publish release。
+#
+# 需要的 repository secrets（Settings → Secrets and variables → Actions）：
+#   TATAMI_CERT_P12       "Tatami Dev" 憑證匯出的 .p12，經過 base64 編碼
+#   TATAMI_CERT_PASSWORD  匯出 .p12 時設定的密碼
+#   SPARKLE_PRIVATE_KEY   generate_keys -x 匯出的 Sparkle 私鑰
 name: Release
 
 on:
@@ -17,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          fetch-depth: 0 # 取得完整歷史，build script 用 commit 數量當 build number
+          fetch-depth: 0 # 取得完整歷史，build script 用 commit 數量當 build number（Sparkle 靠它判斷新舊）
 
       - name: Resolve version from release tag
         env:
@@ -32,18 +37,61 @@ jobs:
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "TAG=$TAG" >> "$GITHUB_ENV"
 
+      - name: Import signing certificate
+        env:
+          CERT_P12: ${{ secrets.TATAMI_CERT_P12 }}
+          CERT_PASSWORD: ${{ secrets.TATAMI_CERT_PASSWORD }}
+        run: |
+          # 固定簽章：每個版本都用同一個憑證，使用者更新後輔助使用權限才會保留
+          if [ -z "$CERT_P12" ]; then
+            echo "::error::Secret TATAMI_CERT_P12 is missing"
+            exit 1
+          fi
+          KEYCHAIN="$RUNNER_TEMP/signing.keychain-db"
+          KEYCHAIN_PASSWORD=$(uuidgen)
+          echo "$CERT_P12" | base64 --decode > "$RUNNER_TEMP/cert.p12"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security set-keychain-settings -lut 3600 "$KEYCHAIN"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security import "$RUNNER_TEMP/cert.p12" -P "$CERT_PASSWORD" -A -f pkcs12 -k "$KEYCHAIN"
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN" > /dev/null
+          security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
+          rm "$RUNNER_TEMP/cert.p12"
+
       - name: Check localizations
         run: ./scripts/check-localizations.sh
 
       - name: Build app
         run: ./scripts/build-app.sh
 
+      - name: Verify signature
+        run: |
+          # 確認真的用了 Tatami Dev 憑證，而不是退回臨時簽章
+          codesign --verify --deep --strict build/Tatami.app
+          codesign -dvv build/Tatami.app 2>&1 | grep -q "Authority=Tatami Dev" \
+            || { echo "::error::App is not signed with Tatami Dev"; exit 1; }
+
       - name: Package DMG
         run: |
           ./scripts/make-dmg.sh "Tatami-$VERSION.dmg"
           shasum -a 256 "Tatami-$VERSION.dmg" | tee "Tatami-$VERSION.dmg.sha256"
 
+      - name: Write appcast
+        env:
+          SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+        run: |
+          ./scripts/make-appcast.sh \
+            "Tatami-$VERSION.dmg" \
+            "$REPO_URL/releases/download/$TAG/Tatami-$VERSION.dmg" \
+            "$REPO_URL/releases/tag/$TAG" \
+            appcast.xml
+          cat appcast.xml
+
       - name: Upload to release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload "$TAG" "Tatami-$VERSION.dmg" "Tatami-$VERSION.dmg.sha256" --clobber
+        run: |
+          gh release upload "$TAG" \
+            "Tatami-$VERSION.dmg" "Tatami-$VERSION.dmg.sha256" appcast.xml \
+            --clobber

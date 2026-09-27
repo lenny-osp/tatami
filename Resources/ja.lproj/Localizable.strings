@@ -46,3 +46,9 @@
 
 "menu.about" = "Tatami について";
 "about.credits" = "グリッドでウインドウを配置。\nMIT ライセンスのオープンソースソフトウェアです。";
+
+"menu.checkForUpdates" = "アップデートを確認…";
+"general.autoUpdate" = "アップデートを自動的に確認";
+"general.autoUpdate.subtitle" = "Tatami を起動するたびに GitHub で新しいバージョンを確認します";
+"help.updates.title" = "アップデート";
+"help.updates.body" = "メニューバーのアイコンから「アップデートを確認…」を選ぶか、「設定 → 一般」で自動確認をオンにします。新しいバージョンが見つかったら「アップデートをインストール」をクリックすると、Tatami がダウンロード・インストールして再起動します。アクセシビリティ権限はそのまま保たれます。";

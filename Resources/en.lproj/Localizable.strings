@@ -46,3 +46,9 @@
 
 "menu.about" = "About Tatami";
 "about.credits" = "Arrange windows on a grid.\nOpen source under the MIT License.";
+
+"menu.checkForUpdates" = "Check for Updates…";
+"general.autoUpdate" = "Check for Updates Automatically";
+"general.autoUpdate.subtitle" = "Checks GitHub for a new version each time Tatami starts";
+"help.updates.title" = "Updates";
+"help.updates.body" = "Choose “Check for Updates…” from the menu bar icon, or turn on automatic checks in Settings → General. When a new version is found, click Install Update and Tatami downloads, installs, and relaunches itself. Your Accessibility permission is kept.";

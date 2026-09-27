@@ -6,3 +6,5 @@ build/
 *.p12
 *.cer
 *.certSigningRequest
+sparkle_private_key*
+*.pem

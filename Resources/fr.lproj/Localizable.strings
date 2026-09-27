@@ -32,20 +32,20 @@
 
 "menu.help" = "Aide";
 "help.title" = "Aide de Tatami";
-"help.intro" = "Tatami dispose vos fenêtres sur une grille. Voici comment l’utiliser.";
+"help.intro" = "Tatami dispose vos fenêtres sur une grille. Voici comment l’utiliser. Vous pouvez changer de langue dans Réglages → Général.";
 "help.grid.title" = "Afficher la grille";
-"help.grid.body" = "Choisissez « Afficher la grille » dans l’icône de la barre des menus, ou utilisez son raccourci. Faites glisser sur les cases pour sélectionner une zone : la fenêtre active s’y déplace lorsque vous relâchez. Appuyez sur Échap ou cliquez à l’extérieur pour annuler.";
+"help.grid.body" = "Choisissez « Afficher la grille » dans l’icône de la barre des menus, ou utilisez son raccourci. Faites glisser sur les cases pour sélectionner une zone : la fenêtre active s’y déplace lorsque vous relâchez. Appuyez sur Échap ou cliquez à l’extérieur pour annuler. Modifiez la taille de la grille dans Réglages → Disposition des fenêtres.";
 "help.snap.title" = "Glisser vers le bord de l’écran";
-"help.snap.body" = "Faites glisser une fenêtre par sa barre de titre vers le haut de l’écran pour l’agrandir, ou vers le bord gauche ou droit pour occuper cette moitié. Un aperçu indique où elle ira. Si la disposition intégrée de macOS réagit aussi, désactivez-la dans Réglages Système → Bureau et Dock.";
+"help.snap.body" = "Faites glisser une fenêtre par sa barre de titre vers le haut de l’écran pour l’agrandir, ou vers le bord gauche ou droit pour occuper cette moitié. Un aperçu indique où elle ira. Si la disposition intégrée de macOS réagit aussi, désactivez-la dans Réglages Système → Bureau et Dock. Vous pouvez désactiver cette fonction dans Réglages → Disposition des fenêtres.";
 "help.shortcuts.title" = "Raccourcis";
 "help.shortcuts.body" = "Dans Réglages → Disposition des fenêtres, ajoutez un raccourci, choisissez sa zone sur la petite grille, nommez-le et enregistrez une combinaison de touches. Utilisez-le dans n’importe quelle app pour déplacer la fenêtre active. Les raccourcis de fonctions permettent aussi d’ouvrir la grille ou de passer à l’écran suivant.";
 "help.screens.title" = "Plusieurs écrans";
 "help.screens.body" = "La grille apparaît sur chaque écran : sélectionnez sur celui où vous voulez placer la fenêtre. En glissant vers un bord, c’est l’écran sous le pointeur qui est utilisé. « Passer à l’écran suivant » conserve la position relative de la fenêtre.";
 "help.permission.title" = "Autorisation d’accessibilité";
-"help.permission.body" = "Tatami a besoin de l’autorisation d’accessibilité pour déplacer les fenêtres des autres apps. Si les fenêtres ne bougent pas, vérifiez l’état de l’autorisation dans le menu et activez Tatami dans Réglages Système → Confidentialité et sécurité → Accessibilité.";
+"help.permission.body" = "Tatami a besoin de l’autorisation d’accessibilité pour déplacer les fenêtres des autres apps. Si les fenêtres ne bougent pas, cliquez sur l’élément d’autorisation dans le menu de Tatami : Tatami supprime l’ancienne entrée et s’ajoute à nouveau, il vous suffit d’activer son interrupteur dans Réglages Système → Confidentialité et sécurité → Accessibilité.";
 
 "menu.about" = "À propos de Tatami";
-"about.credits" = "Disposez vos fenêtres sur une grille.\nLogiciel libre sous licence MIT.";
+"about.credits" = "Disposez vos fenêtres sur une grille.\nLogiciel libre sous licence MIT.\nMises à jour assurées par Sparkle (licence MIT).";
 
 "menu.checkForUpdates" = "Rechercher des mises à jour…";
 "general.autoUpdate" = "Rechercher les mises à jour automatiquement";

@@ -32,20 +32,20 @@
 
 "menu.help" = "說明";
 "help.title" = "Tatami 說明";
-"help.intro" = "Tatami 用格線幫你排列視窗。以下是使用方式。";
+"help.intro" = "Tatami 用格線幫你排列視窗。以下是使用方式。介面語言可以在「設定 → 一般」更改。";
 "help.grid.title" = "顯示格線";
-"help.grid.body" = "從選單列圖示選「顯示格線」，或按下它的快捷鍵。在格子上拖曳選取範圍，放開後目前的視窗就會搬過去。按 Esc 或點面板外面可以取消。";
+"help.grid.body" = "從選單列圖示選「顯示格線」，或按下它的快捷鍵。在格子上拖曳選取範圍，放開後目前的視窗就會搬過去。按 Esc 或點面板外面可以取消。格線大小可以在「設定 → 視窗排列」更改。";
 "help.snap.title" = "拖曳到螢幕邊緣";
-"help.snap.body" = "抓住視窗的標題列，拖到螢幕頂端會最大化，拖到左邊或右邊會排成半邊，拖曳時會顯示預覽。如果 macOS 內建的並排功能也同時作用，請到「系統設定 → 桌面與 Dock」關閉。";
+"help.snap.body" = "抓住視窗的標題列，拖到螢幕頂端會最大化，拖到左邊或右邊會排成半邊，拖曳時會顯示預覽。如果 macOS 內建的並排功能也同時作用，請到「系統設定 → 桌面與 Dock」關閉。這個功能可以在「設定 → 視窗排列」關閉。";
 "help.shortcuts.title" = "快捷鍵";
 "help.shortcuts.body" = "在「設定 → 視窗排列」新增快捷鍵，在小格線上選擇區塊、取名，再錄製按鍵組合。之後在任何 App 裡按下，就會搬移目前的視窗。功能快捷鍵還可以叫出格線，或把視窗搬到下一個螢幕。";
 "help.screens.title" = "多螢幕";
 "help.screens.body" = "每個螢幕都會出現格線面板，在哪個螢幕上選取，視窗就會搬到那個螢幕。拖曳到邊緣時，會排到游標所在的螢幕。「切換螢幕」會保持視窗的相對位置。";
 "help.permission.title" = "輔助使用權限";
-"help.permission.body" = "Tatami 需要「輔助使用」權限才能搬移其他 App 的視窗。如果視窗搬不動，請看選單裡的權限狀態，並到「系統設定 → 隱私權與安全性 → 輔助使用」開啟 Tatami。";
+"help.permission.body" = "Tatami 需要「輔助使用」權限才能搬移其他 App 的視窗。如果視窗搬不動，請點選單裡的權限項目。Tatami 會清掉失效的舊紀錄並重新加入，你只要在「系統設定 → 隱私權與安全性 → 輔助使用」打開 Tatami 的開關。";
 
 "menu.about" = "關於 Tatami";
-"about.credits" = "用格線排列視窗。\n以 MIT 授權開源。";
+"about.credits" = "用格線排列視窗。\n以 MIT 授權開源。\n自動更新使用 Sparkle（MIT 授權）。";
 
 "menu.checkForUpdates" = "檢查更新…";
 "general.autoUpdate" = "自動檢查更新";

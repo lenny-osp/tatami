@@ -32,20 +32,20 @@
 
 "menu.help" = "Hilfe";
 "help.title" = "Tatami-Hilfe";
-"help.intro" = "Tatami ordnet deine Fenster in einem Raster an. So funktioniert es.";
+"help.intro" = "Tatami ordnet deine Fenster in einem Raster an. So funktioniert es. Die Sprache änderst du unter Einstellungen → Allgemein.";
 "help.grid.title" = "Raster anzeigen";
-"help.grid.body" = "Wähle „Raster anzeigen“ im Menüleistensymbol oder drücke den zugehörigen Kurzbefehl. Ziehe über die Felder, um einen Bereich auszuwählen – beim Loslassen wird das aktuelle Fenster dorthin verschoben. Mit Esc oder einem Klick außerhalb brichst du ab.";
+"help.grid.body" = "Wähle „Raster anzeigen“ im Menüleistensymbol oder drücke den zugehörigen Kurzbefehl. Ziehe über die Felder, um einen Bereich auszuwählen – beim Loslassen wird das aktuelle Fenster dorthin verschoben. Mit Esc oder einem Klick außerhalb brichst du ab. Die Rastergröße änderst du unter Einstellungen → Fensteranordnung.";
 "help.snap.title" = "An den Bildschirmrand ziehen";
-"help.snap.body" = "Ziehe ein Fenster an seiner Titelleiste an den oberen Bildschirmrand, um es zu maximieren, oder an den linken oder rechten Rand für die jeweilige Hälfte. Eine Vorschau zeigt die Zielposition. Falls die integrierte Fensteranordnung von macOS ebenfalls reagiert, deaktiviere sie unter Systemeinstellungen → Schreibtisch & Dock.";
+"help.snap.body" = "Ziehe ein Fenster an seiner Titelleiste an den oberen Bildschirmrand, um es zu maximieren, oder an den linken oder rechten Rand für die jeweilige Hälfte. Eine Vorschau zeigt die Zielposition. Falls die integrierte Fensteranordnung von macOS ebenfalls reagiert, deaktiviere sie unter Systemeinstellungen → Schreibtisch & Dock. Diese Funktion lässt sich unter Einstellungen → Fensteranordnung ausschalten.";
 "help.shortcuts.title" = "Kurzbefehle";
 "help.shortcuts.body" = "Füge unter Einstellungen → Fensteranordnung einen Kurzbefehl hinzu, wähle seinen Bereich im kleinen Raster, gib ihm einen Namen und nimm eine Tastenkombination auf. Drücke sie in einer beliebigen App, um das aktuelle Fenster zu verschieben. Mit Funktionskurzbefehlen kannst du außerdem das Raster öffnen oder das Fenster auf den nächsten Bildschirm verschieben.";
 "help.screens.title" = "Mehrere Bildschirme";
 "help.screens.body" = "Das Raster erscheint auf jedem Bildschirm – wähle auf dem Bildschirm aus, auf dem das Fenster landen soll. Beim Ziehen an einen Rand wird der Bildschirm unter dem Zeiger verwendet. „Zum nächsten Bildschirm“ behält die relative Position des Fensters bei.";
 "help.permission.title" = "Bedienungshilfen-Berechtigung";
-"help.permission.body" = "Tatami benötigt die Bedienungshilfen-Berechtigung, um Fenster anderer Apps zu verschieben. Wenn sich Fenster nicht bewegen, prüfe den Status im Menü und aktiviere Tatami unter Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen.";
+"help.permission.body" = "Tatami benötigt die Bedienungshilfen-Berechtigung, um Fenster anderer Apps zu verschieben. Wenn sich Fenster nicht bewegen, klicke im Tatami-Menü auf den Berechtigungseintrag. Tatami entfernt veraltete Einträge und fügt sich neu hinzu – du musst nur noch den Schalter unter Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen einschalten.";
 
 "menu.about" = "Über Tatami";
-"about.credits" = "Fenster in einem Raster anordnen.\nOpen Source unter der MIT-Lizenz.";
+"about.credits" = "Fenster in einem Raster anordnen.\nOpen Source unter der MIT-Lizenz.\nUpdates über Sparkle (MIT-Lizenz).";
 
 "menu.checkForUpdates" = "Nach Updates suchen …";
 "general.autoUpdate" = "Automatisch nach Updates suchen";

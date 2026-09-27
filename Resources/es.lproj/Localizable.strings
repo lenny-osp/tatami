@@ -32,20 +32,20 @@
 
 "menu.help" = "Ayuda";
 "help.title" = "Ayuda de Tatami";
-"help.intro" = "Tatami organiza tus ventanas en una cuadrícula. Así se usa.";
+"help.intro" = "Tatami organiza tus ventanas en una cuadrícula. Así se usa. Puedes cambiar el idioma en Ajustes → General.";
 "help.grid.title" = "Mostrar cuadrícula";
-"help.grid.body" = "Elige «Mostrar cuadrícula» en el icono de la barra de menús o pulsa su atajo. Arrastra sobre las celdas para seleccionar un área: al soltar, la ventana actual se mueve allí. Pulsa Esc o haz clic fuera para cancelar.";
+"help.grid.body" = "Elige «Mostrar cuadrícula» en el icono de la barra de menús o pulsa su atajo. Arrastra sobre las celdas para seleccionar un área: al soltar, la ventana actual se mueve allí. Pulsa Esc o haz clic fuera para cancelar. Cambia el tamaño de la cuadrícula en Ajustes → Organización de ventanas.";
 "help.snap.title" = "Arrastrar al borde de la pantalla";
-"help.snap.body" = "Arrastra una ventana por su barra de título hasta la parte superior de la pantalla para maximizarla, o hasta el borde izquierdo o derecho para ocupar esa mitad. Una vista previa muestra dónde quedará. Si el mosaico integrado de macOS también reacciona, desactívalo en Ajustes del Sistema → Escritorio y Dock.";
+"help.snap.body" = "Arrastra una ventana por su barra de título hasta la parte superior de la pantalla para maximizarla, o hasta el borde izquierdo o derecho para ocupar esa mitad. Una vista previa muestra dónde quedará. Si el mosaico integrado de macOS también reacciona, desactívalo en Ajustes del Sistema → Escritorio y Dock. Puedes desactivarlo en Ajustes → Organización de ventanas.";
 "help.shortcuts.title" = "Atajos";
 "help.shortcuts.body" = "En Ajustes → Organización de ventanas, añade un atajo, elige su área en la cuadrícula pequeña, ponle un nombre y graba una combinación de teclas. Púlsala en cualquier app para mover la ventana actual. Los atajos de funciones también pueden abrir la cuadrícula o mover la ventana a la siguiente pantalla.";
 "help.screens.title" = "Varias pantallas";
 "help.screens.body" = "La cuadrícula aparece en cada pantalla: selecciona en la pantalla donde quieras la ventana. Al arrastrar a un borde, se usa la pantalla bajo el puntero. «Mover a la siguiente pantalla» mantiene la posición relativa de la ventana.";
 "help.permission.title" = "Permiso de accesibilidad";
-"help.permission.body" = "Tatami necesita el permiso de accesibilidad para mover las ventanas de otras apps. Si las ventanas no se mueven, revisa el estado del permiso en el menú y activa Tatami en Ajustes del Sistema → Privacidad y seguridad → Accesibilidad.";
+"help.permission.body" = "Tatami necesita el permiso de accesibilidad para mover las ventanas de otras apps. Si las ventanas no se mueven, haz clic en el elemento de permiso del menú de Tatami: Tatami elimina la entrada antigua y se vuelve a añadir, así que solo tienes que activar su interruptor en Ajustes del Sistema → Privacidad y seguridad → Accesibilidad.";
 
 "menu.about" = "Acerca de Tatami";
-"about.credits" = "Organiza ventanas en una cuadrícula.\nCódigo abierto bajo la licencia MIT.";
+"about.credits" = "Organiza ventanas en una cuadrícula.\nCódigo abierto bajo la licencia MIT.\nActualizaciones con Sparkle (licencia MIT).";
 
 "menu.checkForUpdates" = "Buscar actualizaciones…";
 "general.autoUpdate" = "Buscar actualizaciones automáticamente";

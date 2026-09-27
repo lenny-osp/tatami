@@ -88,13 +88,27 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     @objc private func showAbout() {
         let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
-        let credits = NSAttributedString(
-            string: L("about.credits"),
-            attributes: [
-                .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
-                .foregroundColor: NSColor.secondaryLabelColor,
-            ]
-        )
+        // 簡介 + 可以點的連結（專案網址、贊助），置中顯示
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        let textAttributes: [NSAttributedString.Key: Any] = [
+            .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
+            .foregroundColor: NSColor.secondaryLabelColor,
+            .paragraphStyle: paragraph,
+        ]
+        let credits = NSMutableAttributedString(string: L("about.credits") + "\n\n", attributes: textAttributes)
+        let links = [
+            ("GitHub", "https://github.com/lenny-osp/tatami"),
+            ("Buy Me a Coffee", "https://www.buymeacoffee.com/chihlingw"),
+        ]
+        for (index, link) in links.enumerated() {
+            if index > 0 {
+                credits.append(NSAttributedString(string: "  ·  ", attributes: textAttributes))
+            }
+            var linkAttributes = textAttributes
+            linkAttributes[.link] = URL(string: link.1)
+            credits.append(NSAttributedString(string: link.0, attributes: linkAttributes))
+        }
         // 和其他視窗一樣：等選單關閉後再帶到前景
         DispatchQueue.main.async {
             NSApp.activate()

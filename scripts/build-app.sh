@@ -39,6 +39,8 @@ echo "Version $(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "
 mkdir -p "$APP/Contents/Resources"
 cp -R Resources/*.lproj "$APP/Contents/Resources/"
 cp Resources/AppIcon.icns "$APP/Contents/Resources/"
+# Sparkle 的 MIT 授權要求散佈時附上版權聲明
+cp THIRD_PARTY_NOTICES.md "$APP/Contents/Resources/"
 
 if security find-identity -p codesigning | grep -q "\"$SIGN_IDENTITY\""; then
     echo "Signing with \"$SIGN_IDENTITY\""

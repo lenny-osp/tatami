@@ -32,20 +32,20 @@
 
 "menu.help" = "Help";
 "help.title" = "Tatami Help";
-"help.intro" = "Tatami arranges your windows on a grid. Here’s how to use it.";
+"help.intro" = "Tatami arranges your windows on a grid. Here’s how to use it. You can change the language in Settings → General.";
 "help.grid.title" = "Show Grid";
-"help.grid.body" = "Choose “Show Grid” from the menu bar icon, or press its shortcut. Drag across the cells to select an area, and the current window moves there when you release. Press Esc or click outside to cancel.";
+"help.grid.body" = "Choose “Show Grid” from the menu bar icon, or press its shortcut. Drag across the cells to select an area, and the current window moves there when you release. Press Esc or click outside to cancel. Change the grid size in Settings → Window Arrangement.";
 "help.snap.title" = "Drag to Screen Edge";
-"help.snap.body" = "Drag a window by its title bar to the top of the screen to maximize it, or to the left or right edge to fill that half. A preview shows where it will go. If macOS’s built-in tiling also reacts, turn it off in System Settings → Desktop & Dock.";
+"help.snap.body" = "Drag a window by its title bar to the top of the screen to maximize it, or to the left or right edge to fill that half. A preview shows where it will go. If macOS’s built-in tiling also reacts, turn it off in System Settings → Desktop & Dock. You can turn this off in Settings → Window Arrangement.";
 "help.shortcuts.title" = "Shortcuts";
 "help.shortcuts.body" = "In Settings → Window Arrangement, add a shortcut, choose its area on the small grid, name it, and record a key combination. Press it in any app to move the current window. Function shortcuts can also open the grid or move the window to the next screen.";
 "help.screens.title" = "Multiple Screens";
 "help.screens.body" = "The grid appears on every screen — select on the screen where you want the window. When dragging to an edge, the screen under the pointer is used. “Move to Next Screen” keeps the window’s relative position.";
 "help.permission.title" = "Accessibility Permission";
-"help.permission.body" = "Tatami needs Accessibility permission to move other apps’ windows. If windows don’t move, check the permission status in the menu and turn on Tatami in System Settings → Privacy & Security → Accessibility.";
+"help.permission.body" = "Tatami needs Accessibility permission to move other apps’ windows. If windows don’t move, click the permission item in the Tatami menu. Tatami removes any outdated entry and adds itself again, so you only need to turn on its switch in System Settings → Privacy & Security → Accessibility.";
 
 "menu.about" = "About Tatami";
-"about.credits" = "Arrange windows on a grid.\nOpen source under the MIT License.";
+"about.credits" = "Arrange windows on a grid.\nOpen source under the MIT License.\nUpdates are powered by Sparkle (MIT License).";
 
 "menu.checkForUpdates" = "Check for Updates…";
 "general.autoUpdate" = "Check for Updates Automatically";

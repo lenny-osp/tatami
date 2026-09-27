@@ -80,6 +80,12 @@ To install it, copy `build/Tatami.app` to `/Applications`. To build a DMG, run `
 
 Issues and pull requests are welcome. Please read [AGENTS.md](AGENTS.md) for the project layout, conventions, and localization rules. Every user-visible string must be translated into all supported languages. Check the translations with `./scripts/check-localizations.sh`.
 
+## Support
+
+If Tatami is useful to you, you can support its development:
+
+<a href="https://www.buymeacoffee.com/chihlingw"><img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=%E2%98%95&slug=chihlingw&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" alt="Buy Me A Coffee" height="45"></a>
+
 ## License
 
 [MIT](LICENSE) © 2026 Chihling Wang

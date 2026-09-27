@@ -60,6 +60,9 @@ final class SettingsWindowController {
         guard let tabs else { return }
         for (item, key) in zip(tabs.tabViewItems, tabLabelKeys) {
             item.label = L(key)
+            // 切換分頁時，NSTabViewController 會把分頁內容的 title 當成視窗標題；
+            // 沒設定的話視窗會顯示「Untitled」
+            item.viewController?.title = L(key)
         }
         // 視窗標題顯示目前分頁的名稱
         tabs.view.window?.title = tabs.tabViewItems[tabs.selectedTabViewItemIndex].label

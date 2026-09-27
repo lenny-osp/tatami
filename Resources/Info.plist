@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>Tatami</string>
+    <key>CFBundleIdentifier</key>
+    <string>local.tatami.app</string>
+    <key>CFBundleExecutable</key>
+    <string>Tatami</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>14.0</string>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleLocalizations</key>
+    <array>
+        <string>en</string>
+        <string>zh-Hant</string>
+        <string>zh-Hans</string>
+        <string>fr</string>
+        <string>de</string>
+        <string>es</string>
+        <string>hi</string>
+        <string>ja</string>
+        <string>ko</string>
+        <string>ar</string>
+    </array>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2026 Chihling Wang. MIT License.</string>
+    <key>LSUIElement</key>
+    <true/>
+</dict>
+</plist>

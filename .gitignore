@@ -1,0 +1,8 @@
+.build/
+build/
+.DS_Store
+
+# 憑證與私鑰不要 commit
+*.p12
+*.cer
+*.certSigningRequest

@@ -9,6 +9,7 @@ Guidance for AI agents (and humans) working on **Tatami**, a macOS menu bar app 
 - Run: `pkill -x Tatami; open build/Tatami.app`
 - Always build with the script, not just `swift build`. The script copies `Info.plist` and the `.lproj` folders into the bundle and signs it. A bare executable has no translations and no stable permissions.
 - Signing: the script uses the keychain certificate named `Tatami Dev` if it exists, otherwise an ad-hoc signature. Override with `SIGN_IDENTITY="..."`. Never commit certificates or private keys (`*.p12`, `*.cer`).
+- Version numbers: don't edit `CFBundleShortVersionString` by hand. The build script sets it from `VERSION`, or from `git describe --tags`. Releases are built by `.github/workflows/release.yml` when a GitHub release is published; the tag (for example `v1.2.3`) becomes the version shown in the About panel.
 - The two `ld: warning: search path ... not found` lines come from Command Line Tools and can be ignored. Any other warning should be fixed.
 
 ## Project layout

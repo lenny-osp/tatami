@@ -32,9 +32,11 @@ cd tatami
 open build/Tatami.app
 ```
 
-To install it, copy `build/Tatami.app` to `/Applications`.
+To install it, copy `build/Tatami.app` to `/Applications`. To build a DMG, run `./scripts/make-dmg.sh` after building.
 
-### Pre-built app
+### Download
+
+Download `Tatami-<version>.dmg` from [Releases](https://github.com/lenny-osp/tatami/releases), open it, and drag **Tatami** into **Applications**.
 
 Release builds are not notarized by Apple. macOS will block the app the first time you open it. To allow it, go to **System Settings → Privacy & Security** and click **Open Anyway**, or run:
 

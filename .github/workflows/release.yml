@@ -1,0 +1,49 @@
+# 發佈 GitHub Release 時自動編譯 Tatami.app，版本號使用 release 的 tag，
+# 打包成 DMG 後上傳到該 release。
+#
+# 使用方式：在 GitHub 建立 release，tag 取名為 v1.2.3 或 1.2.3，按下 Publish release。
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write # 上傳 release 附件需要
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # 取得完整歷史，build script 用 commit 數量當 build number
+
+      - name: Resolve version from release tag
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          VERSION="${TAG#v}"
+          # 只接受 1.2.3 或 1.2.3-beta.1 這類格式，避免奇怪的 tag 寫進 Info.plist
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+(\.[0-9]+)?(-[0-9A-Za-z.]+)?$ ]]; then
+            echo "::error::Release tag '$TAG' is not a version like v1.2.3"
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "TAG=$TAG" >> "$GITHUB_ENV"
+
+      - name: Check localizations
+        run: ./scripts/check-localizations.sh
+
+      - name: Build app
+        run: ./scripts/build-app.sh
+
+      - name: Package DMG
+        run: |
+          ./scripts/make-dmg.sh "Tatami-$VERSION.dmg"
+          shasum -a 256 "Tatami-$VERSION.dmg" | tee "Tatami-$VERSION.dmg.sha256"
+
+      - name: Upload to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$TAG" "Tatami-$VERSION.dmg" "Tatami-$VERSION.dmg.sha256" --clobber

@@ -69,3 +69,12 @@
 "backup.ok" = "Aceptar";
 "help.backup.title" = "Copia de seguridad de ajustes";
 "help.backup.body" = "En Ajustes → General, elige Exportar ajustes… para guardar en un archivo tus ajustes de cuadrícula, organización, atajos e idioma. Usa Importar ajustes… en otro Mac, o tras reinstalar, para restaurarlos.";
+
+// Windows
+"help.grid.body.windows" = "Elige «Mostrar cuadrícula» en el icono de Tatami del área de notificación o pulsa su atajo. Arrastra sobre las celdas para seleccionar un área: al soltar, la ventana actual se mueve allí. Pulsa Esc o haz clic fuera para cancelar. Cambia el tamaño de la cuadrícula en Ajustes → Organización de ventanas.";
+"help.snap.body.windows" = "Arrastra una ventana por su barra de título hasta la parte superior de la pantalla para maximizarla, o hasta el borde izquierdo o derecho para ocupar esa mitad. Una vista previa muestra dónde quedará. Si el acoplamiento integrado de Windows también reacciona, desactiva «Acoplar ventanas» en Configuración de Windows → Sistema → Multitarea. Puedes desactivarlo en Ajustes → Organización de ventanas.";
+"help.permission.title.windows" = "Apps que se ejecutan como administrador";
+"help.permission.body.windows" = "En Windows, Tatami no necesita ningún permiso especial. Las ventanas de las apps que se ejecutan como administrador no se pueden mover, a menos que Tatami también se ejecute como administrador. Cuando una ventana no se puede mover, suena un aviso.";
+"help.updates.body.windows" = "Elige «Buscar actualizaciones…» en el icono de Tatami del área de notificación o activa la búsqueda automática en Ajustes → General. Cuando haya una versión nueva, haz clic en Instalar actualización: Tatami descarga el instalador, se cierra, instala la actualización y se reinicia. Tus ajustes se conservan.";
+"help.backup.body.windows" = "En Ajustes → General, elige Exportar ajustes… para guardar en un archivo tus ajustes de cuadrícula, organización, atajos e idioma. Usa Importar ajustes… en otro PC, o tras reinstalar, para restaurarlos. También puedes importar archivos exportados en un Mac, salvo sus combinaciones de teclas.";
+"about.credits.windows" = "Organiza ventanas en una cuadrícula.\nCódigo abierto bajo la licencia MIT.\nActualizaciones con NetSparkle (licencia MIT).";

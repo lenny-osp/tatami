@@ -69,3 +69,12 @@
 "backup.ok" = "好";
 "help.backup.title" = "備份設定";
 "help.backup.body" = "在「設定 → 一般」選「匯出設定…」，把格線、Snap、快捷鍵和語言設定存成檔案。在另一台 Mac 或重新安裝後，用「匯入設定…」就能還原。";
+
+// Windows
+"help.grid.body.windows" = "從通知區域的 Tatami 圖示選「顯示格線」，或按下它的快捷鍵。在格子上拖曳選取範圍，放開後目前的視窗就會搬過去。按 Esc 或點面板外面可以取消。格線大小可以在「設定 → 視窗排列」更改。";
+"help.snap.body.windows" = "抓住視窗的標題列，拖到螢幕頂端會最大化，拖到左邊或右邊會排成半邊，拖曳時會顯示預覽。如果 Windows 內建的貼齊功能也同時作用，請到 Windows「設定 → 系統 → 多工」關閉「貼齊視窗」。這個功能可以在「設定 → 視窗排列」關閉。";
+"help.permission.title.windows" = "以系統管理員身分執行的 App";
+"help.permission.body.windows" = "在 Windows 上，Tatami 不需要任何特殊權限。以系統管理員身分執行的 App，它的視窗無法搬移，除非 Tatami 也以系統管理員身分執行。視窗無法搬移時會發出提示音。";
+"help.updates.body.windows" = "從通知區域的 Tatami 圖示選「檢查更新…」，或在「設定 → 一般」開啟自動檢查。找到新版本時按「安裝更新」，Tatami 會下載安裝程式、自動關閉、安裝更新並重新啟動，設定都會保留。";
+"help.backup.body.windows" = "在「設定 → 一般」選「匯出設定…」，把格線、Snap、快捷鍵和語言設定存成檔案。在另一台電腦或重新安裝後，用「匯入設定…」就能還原。在 Mac 上匯出的檔案也能匯入，只是不包含按鍵組合。";
+"about.credits.windows" = "用格線排列視窗。\n以 MIT 授權開源。\n自動更新使用 NetSparkle（MIT 授權）。";

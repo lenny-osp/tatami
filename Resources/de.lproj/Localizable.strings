@@ -69,3 +69,12 @@
 "backup.ok" = "OK";
 "help.backup.title" = "Einstellungen sichern";
 "help.backup.body" = "Wähle unter Einstellungen → Allgemein „Einstellungen exportieren …“, um Raster, Randanordnung, Kurzbefehle und Sprache in einer Datei zu speichern. Mit „Einstellungen importieren …“ stellst du sie auf einem anderen Mac oder nach einer Neuinstallation wieder her.";
+
+// Windows
+"help.grid.body.windows" = "Wähle „Raster anzeigen“ im Tatami-Symbol im Infobereich oder drücke den zugehörigen Kurzbefehl. Ziehe über die Felder, um einen Bereich auszuwählen – beim Loslassen wird das aktuelle Fenster dorthin verschoben. Mit Esc oder einem Klick außerhalb brichst du ab. Die Rastergröße änderst du unter Einstellungen → Fensteranordnung.";
+"help.snap.body.windows" = "Ziehe ein Fenster an seiner Titelleiste an den oberen Bildschirmrand, um es zu maximieren, oder an den linken oder rechten Rand für die jeweilige Hälfte. Eine Vorschau zeigt die Zielposition. Falls das integrierte Andocken von Windows ebenfalls reagiert, deaktiviere „Fenster andocken“ unter Windows-Einstellungen → System → Multitasking. Diese Funktion lässt sich unter Einstellungen → Fensteranordnung ausschalten.";
+"help.permission.title.windows" = "Apps, die als Administrator laufen";
+"help.permission.body.windows" = "Unter Windows benötigt Tatami keine besondere Berechtigung. Fenster von Apps, die als Administrator laufen, lassen sich nur verschieben, wenn Tatami ebenfalls als Administrator läuft. Kann ein Fenster nicht verschoben werden, ertönt ein Warnton.";
+"help.updates.body.windows" = "Wähle „Nach Updates suchen …“ im Tatami-Symbol im Infobereich oder aktiviere die automatische Suche unter Einstellungen → Allgemein. Wird eine neue Version gefunden, klicke auf „Update installieren“ – Tatami lädt das Installationsprogramm, beendet sich, installiert das Update und startet neu. Deine Einstellungen bleiben erhalten.";
+"help.backup.body.windows" = "Wähle unter Einstellungen → Allgemein „Einstellungen exportieren …“, um Raster, Randanordnung, Kurzbefehle und Sprache in einer Datei zu speichern. Mit „Einstellungen importieren …“ stellst du sie auf einem anderen PC oder nach einer Neuinstallation wieder her. Auf einem Mac exportierte Dateien lassen sich ebenfalls importieren, nur ohne Tastenkombinationen.";
+"about.credits.windows" = "Fenster in einem Raster anordnen.\nOpen Source unter der MIT-Lizenz.\nUpdates über NetSparkle (MIT-Lizenz).";

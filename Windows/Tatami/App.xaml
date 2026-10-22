@@ -1,0 +1,7 @@
+<Application x:Class="Tatami.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             ThemeMode="System"
+             ShutdownMode="OnExplicitShutdown">
+    <!-- 共用樣式在 Styles.xaml，啟動時才加入，才不會蓋掉 ThemeMode 加入的 Fluent 主題資源 -->
+</Application>

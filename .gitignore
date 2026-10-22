@@ -8,3 +8,7 @@ build/
 *.certSigningRequest
 sparkle_private_key*
 *.pem
+
+# Windows 版的編譯產物
+Windows/**/bin/
+Windows/**/obj/

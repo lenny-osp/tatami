@@ -69,3 +69,12 @@
 "backup.ok" = "好";
 "help.backup.title" = "备份设置";
 "help.backup.body" = "在“设置 → 通用”中选择“导出设置…”，将网格、Snap、快捷键和语言设置保存为文件。在另一台 Mac 上或重新安装后，使用“导入设置…”即可恢复。";
+
+// Windows
+"help.grid.body.windows" = "从通知区域的 Tatami 图标选择“显示网格”，或按下它的快捷键。在格子上拖动选择区域，松开后当前窗口就会移过去。按 Esc 或点击面板外部可取消。网格大小可以在“设置 → 窗口排列”中更改。";
+"help.snap.body.windows" = "按住窗口的标题栏，拖到屏幕顶部会最大化，拖到左边或右边会占据半屏，拖动时会显示预览。如果 Windows 自带的贴靠功能也同时生效，请在 Windows“设置 → 系统 → 多任务处理”中关闭“贴靠窗口”。此功能可以在“设置 → 窗口排列”中关闭。";
+"help.permission.title.windows" = "以管理员身份运行的应用";
+"help.permission.body.windows" = "在 Windows 上，Tatami 不需要任何特殊权限。以管理员身份运行的应用，其窗口无法移动，除非 Tatami 也以管理员身份运行。窗口无法移动时会发出提示音。";
+"help.updates.body.windows" = "从通知区域的 Tatami 图标选择“检查更新…”，或在“设置 → 通用”中开启自动检查。发现新版本时点击“安装更新”，Tatami 会下载安装程序、自动关闭、安装更新并重新启动，设置都会保留。";
+"help.backup.body.windows" = "在“设置 → 通用”中选择“导出设置…”，将网格、Snap、快捷键和语言设置保存为文件。在另一台电脑上或重新安装后，使用“导入设置…”即可恢复。在 Mac 上导出的文件也可以导入，只是不包含按键组合。";
+"about.credits.windows" = "用网格排列窗口。\n以 MIT 许可证开源。\n自动更新使用 NetSparkle（MIT 许可证）。";

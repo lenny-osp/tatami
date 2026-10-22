@@ -1,0 +1,25 @@
+<UserControl x:Class="Tatami.ShortcutRecorder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Tatami">
+    <!-- 點一下開始錄製，接著按下想要的組合。Esc 取消，Backspace／Delete 清除。 -->
+    <StackPanel Orientation="Horizontal">
+        <Button x:Name="RecordButton"
+                MinWidth="150"
+                Click="OnRecordClick"
+                PreviewKeyDown="OnPreviewKeyDown"
+                LostKeyboardFocus="OnLostKeyboardFocus">
+            <TextBlock x:Name="Label" />
+        </Button>
+        <Button x:Name="ClearButton"
+                Margin="4,0,0,0"
+                Padding="6"
+                Background="Transparent"
+                BorderThickness="0"
+                Click="OnClearClick"
+                ToolTip="{Binding [recorder.clear], Source={x:Static local:Loc.Instance}}">
+            <TextBlock FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="12" Text="&#xE711;"
+                       Foreground="{DynamicResource TextFillColorSecondaryBrush}" />
+        </Button>
+    </StackPanel>
+</UserControl>

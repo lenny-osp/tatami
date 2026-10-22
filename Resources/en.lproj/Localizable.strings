@@ -69,3 +69,12 @@
 "backup.ok" = "OK";
 "help.backup.title" = "Back Up Settings";
 "help.backup.body" = "In Settings → General, choose Export Settings… to save your grid, snap, shortcut, and language settings to a file. Use Import Settings… on another Mac, or after reinstalling, to restore them.";
+
+// Windows
+"help.grid.body.windows" = "Choose “Show Grid” from the Tatami icon in the notification area, or press its shortcut. Drag across the cells to select an area, and the current window moves there when you release. Press Esc or click outside to cancel. Change the grid size in Settings → Window Arrangement.";
+"help.snap.body.windows" = "Drag a window by its title bar to the top of the screen to maximize it, or to the left or right edge to fill that half. A preview shows where it will go. If Windows’ own Snap also reacts, turn off “Snap windows” in Windows Settings → System → Multitasking. You can turn this off in Settings → Window Arrangement.";
+"help.permission.title.windows" = "Apps Running as Administrator";
+"help.permission.body.windows" = "Tatami needs no special permission on Windows. Windows of apps running as administrator can’t be moved unless Tatami also runs as administrator. When a window can’t be moved, you hear an alert sound.";
+"help.updates.body.windows" = "Choose “Check for Updates…” from the Tatami icon in the notification area, or turn on automatic checks in Settings → General. When a new version is found, click Install Update: Tatami downloads the installer, closes, installs the update, and relaunches itself. Your settings are kept.";
+"help.backup.body.windows" = "In Settings → General, choose Export Settings… to save your grid, snap, shortcut, and language settings to a file. Use Import Settings… on another PC, or after reinstalling, to restore them. Files exported on a Mac can be imported too; only their key combinations are left out.";
+"about.credits.windows" = "Arrange windows on a grid.\nOpen source under the MIT License.\nUpdates are powered by NetSparkle (MIT License).";

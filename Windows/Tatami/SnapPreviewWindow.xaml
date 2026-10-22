@@ -1,0 +1,16 @@
+<Window x:Class="Tatami.SnapPreviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        ShowActivated="False"
+        Topmost="True"
+        Focusable="False"
+        IsHitTestVisible="False"
+        Width="1" Height="1">
+    <!-- 拖曳時顯示「放開後視窗會在哪裡」的半透明方框 -->
+    <Border x:Name="Box" CornerRadius="10" BorderThickness="2" />
+</Window>

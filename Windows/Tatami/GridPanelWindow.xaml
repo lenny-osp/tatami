@@ -1,0 +1,17 @@
+<Window x:Class="Tatami.GridPanelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Tatami"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        ShowActivated="False"
+        Topmost="True"
+        Width="360" Height="225">
+    <!-- 深色半透明的圓角面板，不論淺色或深色主題都一樣（和 macOS 的 HUD 面板相同） -->
+    <Border CornerRadius="12" Background="#E61C1C1E" BorderBrush="#33FFFFFF" BorderThickness="1">
+        <local:GridView x:Name="GridView" CellBrush="White" />
+    </Border>
+</Window>

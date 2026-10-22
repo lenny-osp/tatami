@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- WPF0001：ThemeMode（Fluent 主題）在 .NET 10 仍標示為實驗性 API -->
+    <NoWarn>$(NoWarn);WPF0001</NoWarn>
+    <AssemblyName>Tatami</AssemblyName>
+    <RootNamespace>Tatami</RootNamespace>
+    <ApplicationIcon>..\Resources\AppIcon.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+
+    <!-- 版本號：scripts/build-windows.ps1 用 -p:Version=... 等參數覆蓋 -->
+    <Version>0.1.0</Version>
+    <Company>Tatami</Company>
+    <Product>Tatami</Product>
+    <Copyright>Copyright © 2026 Chihling Wang</Copyright>
+    <!-- 「關於」視窗直接顯示版本號，不要附加 +commit 雜湊 -->
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <!-- 介面翻譯用共用的 .strings 檔，不需要 WPF 的衛星組件 -->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- WPF 專案的 ImplicitUsings 不含 System.IO（避免和 System.Windows.Shapes.Path 衝突），這裡沒用到 Shapes -->
+    <Using Include="System.IO" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetSparkleUpdater.SparkleUpdater" Version="3.1.0" />
+    <PackageReference Include="NetSparkleUpdater.UI.WPF" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 和 macOS 版共用的翻譯檔，複製成 Locales\<語言>.lproj\Localizable.strings -->
+    <Content Include="..\..\Resources\*.lproj\Localizable.strings"
+             Link="Locales\%(RecursiveDir)%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest" />
+    <!-- 第三方授權聲明（MIT 授權要求散佈時附上） -->
+    <Content Include="..\..\THIRD_PARTY_NOTICES.md"
+             Link="THIRD_PARTY_NOTICES.md"
+             CopyToOutputDirectory="PreserveNewest" />
+    <Resource Include="..\Resources\AppIcon.ico" Link="AppIcon.ico" />
+  </ItemGroup>
+
+</Project>

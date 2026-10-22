@@ -1,4 +1,5 @@
-# 每個 PR、以及合併（push）到 main 時自動執行：翻譯檢查、單元測試、打包 App 和 DMG。
+# 每個 PR、以及合併（push）到 main 時自動執行：翻譯檢查、單元測試、打包。
+# macOS 和 Windows 兩個 job 同時跑：macOS 打包 App 和 DMG，Windows 打包安裝程式。
 name: CI
 
 on:
@@ -15,7 +16,7 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v5
@@ -51,3 +52,62 @@ jobs:
 
       - name: Build DMG
         run: ./scripts/make-dmg.sh
+
+  windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # build script 用 git describe 計算版本號
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('Windows/**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Check localizations
+        run: python scripts/check_localizations.py
+
+      - name: Run tests
+        run: dotnet test Windows/Tatami.sln -c Release
+
+      - name: Install Inno Setup
+        # runner 映像檔通常已經有 Inno Setup 6，沒有才用 Chocolatey 安裝
+        run: |
+          if (-not (Test-Path 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe')) {
+            choco install innosetup --no-progress -y
+          }
+
+      - name: Build app and installer
+        # 沒有程式碼簽章，安裝程式未簽署；這裡只確認打包流程沒壞
+        run: pwsh scripts/build-windows.ps1
+
+      - name: Verify installer
+        run: |
+          if (-not (Test-Path build/windows/publish/Tatami.exe)) {
+            Write-Output '::error::build/windows/publish/Tatami.exe is missing'
+            exit 1
+          }
+          $installer = @(Get-ChildItem build/windows/Tatami-*-Setup.exe)
+          if ($installer.Count -ne 1) {
+            Write-Output '::error::Expected one build/windows/Tatami-*-Setup.exe'
+            exit 1
+          }
+          Write-Output "$($installer[0].Name) ($($installer[0].Length) bytes)"
+
+      # 上傳安裝程式，不用發 release 也能下載這個 PR 的版本試用
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: Tatami-windows-installer
+          path: build/windows/Tatami-*-Setup.exe
+          if-no-files-found: error

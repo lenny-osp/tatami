@@ -69,3 +69,12 @@
 "backup.ok" = "OK";
 "help.backup.title" = "Sauvegarder les réglages";
 "help.backup.body" = "Dans Réglages → Général, choisissez Exporter les réglages… pour enregistrer vos réglages de grille, de disposition, de raccourcis et de langue dans un fichier. Utilisez Importer des réglages… sur un autre Mac, ou après une réinstallation, pour les restaurer.";
+
+// Windows
+"help.grid.body.windows" = "Choisissez « Afficher la grille » dans l’icône Tatami de la zone de notification, ou utilisez son raccourci. Faites glisser sur les cases pour sélectionner une zone : la fenêtre active s’y déplace lorsque vous relâchez. Appuyez sur Échap ou cliquez à l’extérieur pour annuler. Modifiez la taille de la grille dans Réglages → Disposition des fenêtres.";
+"help.snap.body.windows" = "Faites glisser une fenêtre par sa barre de titre vers le haut de l’écran pour l’agrandir, ou vers le bord gauche ou droit pour occuper cette moitié. Un aperçu indique où elle ira. Si l’ancrage intégré de Windows réagit aussi, désactivez « Ancrer les fenêtres » dans Paramètres Windows → Système → Multitâche. Vous pouvez désactiver cette fonction dans Réglages → Disposition des fenêtres.";
+"help.permission.title.windows" = "Apps exécutées en tant qu’administrateur";
+"help.permission.body.windows" = "Sous Windows, Tatami n’a besoin d’aucune autorisation particulière. Les fenêtres des apps exécutées en tant qu’administrateur ne peuvent pas être déplacées, sauf si Tatami est aussi exécuté en tant qu’administrateur. Un son d’alerte retentit lorsqu’une fenêtre ne peut pas être déplacée.";
+"help.updates.body.windows" = "Choisissez « Rechercher des mises à jour… » dans l’icône Tatami de la zone de notification, ou activez la recherche automatique dans Réglages → Général. Lorsqu’une nouvelle version est trouvée, cliquez sur Installer la mise à jour : Tatami télécharge le programme d’installation, se ferme, installe la mise à jour et redémarre. Vos réglages sont conservés.";
+"help.backup.body.windows" = "Dans Réglages → Général, choisissez Exporter les réglages… pour enregistrer vos réglages de grille, de disposition, de raccourcis et de langue dans un fichier. Utilisez Importer des réglages… sur un autre PC, ou après une réinstallation, pour les restaurer. Les fichiers exportés sur un Mac peuvent aussi être importés, sans leurs combinaisons de touches.";
+"about.credits.windows" = "Disposez vos fenêtres sur une grille.\nLogiciel libre sous licence MIT.\nMises à jour assurées par NetSparkle (licence MIT).";

@@ -143,7 +143,10 @@ final class AppSettings: ObservableObject {
     }
 
     /// 套用匯入的設定。檔案裡沒有的欄位保留目前的值；格線大小會限制在允許範圍內。
+    /// 其他平台匯出的檔案不套用任何按鍵組合（見 SettingsBackup.stripForeignKeyCombos）。
     func apply(_ backup: SettingsBackup) {
+        let isFromOtherPlatform = backup.isFromOtherPlatform
+        let backup = SettingsBackup.stripForeignKeyCombos(backup)
         if let code = backup.language, let language = AppLanguage(rawValue: code) {
             self.language = language
         }
@@ -151,9 +154,12 @@ final class AppSettings: ObservableObject {
         if let enabled = backup.isAutoUpdateEnabled { isAutoUpdateEnabled = enabled }
         if let columns = backup.gridColumns { gridColumns = Self.clamp(columns) }
         if let rows = backup.gridRows { gridRows = Self.clamp(rows) }
-        // 快捷鍵沒設定時匯出檔裡不會有這個欄位，所以直接套用（nil 代表清除）
-        showGridKeyCombo = backup.showGridKeyCombo
-        nextScreenKeyCombo = backup.nextScreenKeyCombo
+        // 快捷鍵沒設定時匯出檔裡不會有這個欄位，所以直接套用（nil 代表清除）。
+        // 其他平台的檔案沒有可用的按鍵，保留這台 Mac 目前的設定。
+        if !isFromOtherPlatform {
+            showGridKeyCombo = backup.showGridKeyCombo
+            nextScreenKeyCombo = backup.nextScreenKeyCombo
+        }
         if let shortcuts = backup.shortcuts { self.shortcuts = shortcuts }
     }
 
